@@ -1,5 +1,19 @@
 .WebsiteTitle{
     color: blueviolet;
     font-size: 6em;
+    text-align: right;
+}
+.Navigationbar{
+    color: white;
+    font-size: 20px;
+    text-align: right;
+}
+.Text{
+    font-size: 15px;
     text-align: center;
+    padding: 50px;
+
+}
+.Rectangle{
+    text-align: right;
 }
