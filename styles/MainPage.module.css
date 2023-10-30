@@ -1,6 +1,11 @@
 .WebsiteTitle{
-    color: blueviolet;
+    color: #FFF;
+    font-family: Viga;
     font-size: 6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.44px;
     text-align: right;
 }
 .Navigationbar{
@@ -17,3 +22,4 @@
 .Rectangle{
     text-align: right;
 }
+
