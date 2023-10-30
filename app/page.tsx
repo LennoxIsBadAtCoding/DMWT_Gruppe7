@@ -22,7 +22,7 @@ export default function MainPage() {
             <div><h1 className={styles.WebsiteTitle}>RECHARGE THE</h1></div>
             <div><h1 className={styles.WebsiteTitle}>SOURCE</h1></div>
 
-            <Link href="/formular">Hier geht's zum Formular</Link>
+            <Link className={styles.linkStyle} href="/formular">Hier geht's zum Formular</Link>
 
 
 

@@ -1,0 +1,11 @@
+.comment{
+    color: #FFFFFF;
+}
+#commentBox{
+    margin: auto;
+    width: 30%;
+}
+.linkStyle{
+    text-decoration:none;
+    color: #FFFFFF;
+}
