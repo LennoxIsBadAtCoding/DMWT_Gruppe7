@@ -1,14 +1,14 @@
 
 .body{
-    height: 100%;
+    width: 1440px;
+    /*height: 1024px;*/
     background-image:url("../public/Background.svg");
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
     margin: 0 auto;
-    padding: 0;
-    border: 0 ;
-    width: 100%;
+    /*padding: 0;
+    border: 0 ;*/
 
 }
 .mockupmenutext{

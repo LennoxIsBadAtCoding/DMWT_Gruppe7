@@ -25,6 +25,7 @@
     text-align: right;
 }
 .linkStyle{
-    text-decoration:none;
-    color: #FFFFFF;
+    font-size: 3em;
+    text-decoration: underline;
+    color: lightblue;
 }

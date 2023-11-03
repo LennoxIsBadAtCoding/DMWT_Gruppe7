@@ -2,77 +2,85 @@ import Link from "next/link"
 import React from "react";
 import styles from "styles/MainPage.module.css"
 export default function MainPage() {
+    function Hero() {
+        const heroStyle = {
+            width: '100%',
+            height: '512px',
+            margin:'0 auto',
+            backgroundColor: 'darkblue',
+            opacity: '90%',
+        }
+        return (
+            <div style={heroStyle}>
+                <div><h1 className={styles.WebsiteTitle}>RECHARGE THE</h1></div>
+                <div><h1 className={styles.WebsiteTitle}>SOURCE</h1></div>
+            </div>
+        )
+    }
 
-    function Rectangle(){
+    function RectangleResourceInformation(){
         const rectangleStyle = {
-        width: '400px',
-        height: '300px',
+        width: '100%',
+        height: '500px',
         backgroundColor: 'darkgrey',
     };
         return(
             <div style={rectangleStyle}>
-            Hier wird Text stehen
+            Informationen über die verfügbaren Ressourcen der Welt
+            </div>
+        )
+    }
+    function RectangleRecyclingInformation(){
+        const rectangleStyle = {
+            width: '100%',
+            height: '500px',
+            opacity: '80%',
+            backgroundColor: 'darkgrey',
+        };
+        return(
+            <div style={rectangleStyle}>
+                Recycling Informationen
+            </div>
+        )
+    }
+    function RectangleFacts(){
+        const rectangleStyle = {
+            width: '100%',
+            height: '500px',
+            opacity: '60%',
+            backgroundColor: 'darkgrey',
+        };
+        return(
+            <div style={rectangleStyle}>
+                Fakten über Smartphone + Ressourcen
+            </div>
+        )
+    }
+    function RectangleInfographics(){
+        const rectangleStyle = {
+            width: '100%',
+            height: '500px',
+            opacity: '40%',
+            backgroundColor: 'darkgrey',
+        };
+        return(
+            <div style={rectangleStyle}>
+                Hier wird eine Infografik entstehen
             </div>
         )
     }
 
 
+
     return(
         <main>
-            <div><h1 className={styles.WebsiteTitle}>RECHARGE THE</h1></div>
-            <div><h1 className={styles.WebsiteTitle}>SOURCE</h1></div>
+            <Hero></Hero>
+            <Link className={styles.linkStyle} href="/formular">Hier geht's zum Formular mit den Kommentaren</Link>
+            <RectangleResourceInformation></RectangleResourceInformation>
+            <RectangleRecyclingInformation></RectangleRecyclingInformation>
+            <RectangleFacts></RectangleFacts>
+            <RectangleInfographics></RectangleInfographics>
 
-            <Link className={styles.linkStyle} href="/formular">Hier geht's zum Formular</Link>
-
-
-
-            <Rectangle></Rectangle>
-
-            <div>
-                <p className={styles.Text}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam<br />
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <br />
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br />
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br />
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br />
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div>
-                <p className={styles.Text}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam<br />
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <br />
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br />
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br />
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br />
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div>
-                <p className={styles.Text}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam<br />
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <br />
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br />
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br />
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br />
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div>
-                <p className={styles.Text}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam<br />
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <br />
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br />
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br />
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br />
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div>
-                <p className={styles.Text}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam<br />
-                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <br />
-                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <br />
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br />
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br />
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
 
         </main>
     )
