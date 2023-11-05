@@ -51,11 +51,9 @@ export default function Formular () {
     return (
         <main>
 
-
             <Rectangle></Rectangle>
             <Link className={styles.linkStyle} href="/">Hier geht's wieder zurück zur Startseite</Link>
             <FetchComments></FetchComments>
-
 
         </main>
     )

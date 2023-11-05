@@ -11,7 +11,7 @@ export const metadata = {
       backgroundColor: 'black',
      }
   return (<div style={mockupmenu}> <p className={styles.mockupmenutext}>
-    Recycling | Facts | Überraschung | Kontakt
+    Recycling | Facts | Infografik | Kontakt
   </p>
   </div>)
 }

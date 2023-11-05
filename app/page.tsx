@@ -6,7 +6,7 @@ export default function MainPage() {
         const heroStyle = {
             width: '100%',
             height: '512px',
-            margin:'0 auto',
+            margin: '0 auto',
             backgroundColor: 'darkblue',
             opacity: '90%',
         }
