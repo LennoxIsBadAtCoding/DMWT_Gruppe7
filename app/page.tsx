@@ -6,14 +6,13 @@ export default function MainPage() {
         const heroStyle = {
             width: '100%',
             height: '512px',
-            margin: '0 auto',
+            paddingTop: '5%',
             backgroundColor: 'darkblue',
-            opacity: '90%',
         }
         return (
             <div style={heroStyle}>
-                <div><h1 className={styles.WebsiteTitle}>RECHARGE THE</h1></div>
-                <div><h1 className={styles.WebsiteTitle}>SOURCE</h1></div>
+                <h1 className={styles.WebsiteTitle}>RECHARGE THE</h1>
+                <h1 className={styles.WebsiteTitle}>SOURCE</h1>
             </div>
         )
     }

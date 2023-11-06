@@ -3,6 +3,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 import React from 'react';
 import styles from "styles/Formular.module.css";
+import Image from "next/image";
 
 export default function Formular () {
     const fetcher = (url) => fetch(url).then((res) => res.json()); // gets an url, then fetches data from url and sends the data to res.json();
@@ -50,7 +51,6 @@ export default function Formular () {
 
     return (
         <main>
-
             <Rectangle></Rectangle>
             <Link className={styles.linkStyle} href="/">Hier geht's wieder zurück zur Startseite</Link>
             <FetchComments></FetchComments>
