@@ -54,7 +54,10 @@ export default function Formular () {
             <Rectangle></Rectangle>
             <Link className={styles.linkStyle} href="/">Hier geht's wieder zurück zur Startseite</Link>
             <FetchComments></FetchComments>
-
+            <Image       src="/meineErsteHeroSlideAnimation.gif"
+                         width={1920}
+                         height={1080}
+                         alt="Hero gif"/>
         </main>
     )
 }
