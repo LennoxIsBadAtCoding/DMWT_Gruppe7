@@ -25,7 +25,7 @@ export default function MainPage() {
     };
         return(
             <div style={rectangleStyle}>
-            Informationen über die verfügbaren Ressourcen der Welt
+            Informationen über die verfügbaren Ressourcen der Welt test
             </div>
         )
     }
