@@ -10,3 +10,8 @@
     text-decoration: underline;
     color: lightblue;
 }
+
+.App {
+    font-family: "Comic Sans MS", serif;
+    text-align: center;
+}

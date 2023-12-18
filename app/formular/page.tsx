@@ -4,6 +4,8 @@ import useSWR from 'swr';
 import React from 'react';
 import styles from "styles/Formular.module.css";
 import Image from "next/image";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Formular () {
     const fetcher = (url) => fetch(url).then((res) => res.json()); // gets an url, then fetches data from url and sends the data to res.json();
@@ -49,9 +51,27 @@ export default function Formular () {
         )
     }
 
+    // form
+    function App() {
+        const { register, handleSubmit } = useForm();
+        const [data, setData] = useState("");
+
+        return (
+            <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+                <input {...register("firstName")} placeholder="First name" />
+                <input {...register("eMail")} placeholder="E-mail" />
+                <input {...register("comment")} placeholder="Comment" />
+                <p>{data}</p>
+                <input type="submit" />
+            </form>
+        );
+    }
+
+
     return (
         <main>
             <Rectangle></Rectangle>
+            <App></App>
             <Link className={styles.linkStyle} href="/">Hier geht's wieder zurück zur Startseite</Link>
             <FetchComments></FetchComments>
             <Image       src="/meineErsteHeroSlideAnimation.gif"
