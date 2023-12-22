@@ -53,20 +53,19 @@ export default function Formular () {
 
     // form
     function App() {
-        const { register, handleSubmit } = useForm();
+        const {register, handleSubmit} = useForm();
         const [data, setData] = useState("");
 
         return (
             <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
-                <input {...register("firstName")} placeholder="First name" />
-                <input {...register("eMail")} placeholder="E-mail" />
-                <input {...register("comment")} placeholder="Comment" />
+                <input {...register("firstName")} placeholder="First name"/>
+                <input {...register("eMail")} placeholder="E-mail"/>
+                <input {...register("comment")} placeholder="Comment"/>
                 <p>{data}</p>
-                <input type="submit" />
+                <input type="submit"/>
             </form>
         );
     }
-
 
     return (
         <main>
