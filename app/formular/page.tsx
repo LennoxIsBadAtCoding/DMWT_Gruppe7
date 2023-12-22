@@ -51,7 +51,7 @@ export default function Formular () {
         )
     }
 
-    // form
+    // form for user input
     function App() {
         const {register, handleSubmit} = useForm();
         const [data, setData] = useState("");
