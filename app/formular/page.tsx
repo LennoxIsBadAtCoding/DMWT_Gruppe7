@@ -1,9 +1,7 @@
 "use client";
 import Link from 'next/link';
-import useSWR from 'swr';
 import React from 'react';
-import styles from "styles/Formular.module.css";
-import Image from "next/image";
+import styles from "../../styles/Formular.module.css";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

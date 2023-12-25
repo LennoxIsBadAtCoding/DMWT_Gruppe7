@@ -1,3 +1,9 @@
+.h1{
+    text-align: center;
+    margin-top: 300px;
+    font-size: 50px;
+}
+
 .WebsiteTitle{
     color: #FFF;
     font-family: Viga;
@@ -9,11 +15,7 @@
     text-align: right;
     padding-right: 2em;
 }
-.Navigationbar{
-    color: white;
-    font-size: 20px;
-    text-align: right;
-}
+
 .Text{
     color: white;
     font-size: 15px;
@@ -21,11 +23,52 @@
     padding: 50px;
 
 }
-.Rectangle{
-    text-align: right;
+
+.centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#smallBox{
+    height: 745px;
+}
+
+#largeBox{
+    height: 1590px;
+}
+
+.transparentBox{
+    width: 85%;
+    border-radius: 50px;
+    background-color: #10121E;
+    opacity: 80%;
+    margin-top: 200px;
+    color: white;
+    padding-left: 4%;
+    padding-top: 1.5%;
+}
+
+#buttonToForm{
+    margin-top: 300px;
+    margin-bottom: 200px;
+    border-radius: 50px;
+    font-size: 30px;
+    height: 150px;
+    width: 475px;
+    border: none;
+    background-color: #20D7C4;
+    font-weight: bold;
+}
+
+#buttonToForm:hover{
+    background-color: #26C2B2;
+    font-size: 32px;
+    transition: 0.5s;
+}
+
 .linkStyle{
     font-size: 3em;
-    text-decoration: underline;
+    text-decoration: underline dotted;
     color: lightblue;
 }

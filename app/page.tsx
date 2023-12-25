@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from "react";
-import styles from "styles/MainPage.module.css"
+import styles from "../styles/MainPage.module.css"
+
 export default function MainPage() {
     function Hero() {
         const heroStyle = {
@@ -17,70 +18,84 @@ export default function MainPage() {
         )
     }
 
-    function RectangleResourceInformation(){
-        const rectangleStyle = {
-        width: '100%',
-        height: '500px',
-        backgroundColor: 'darkgrey',
+    function BoxVerschwenderischerLebenstil() {
+        return (
+            <div className={styles.centered}>
+                <div className={styles.transparentBox} id={styles.smallBox}>
+                    <h1 style={{fontSize: 60}}>
+                        Unser verschwenderischer Lebensstil
+                    </h1>
+                    <p style={{fontSize: 40}}>
+                        Bitte hier Text für "Unser verschwenderischer Lebensstil" einfügen.
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+    function BoxRecyclingAlsLoesung() {
+        return (
+            <div className={styles.centered}>
+                <div className={styles.transparentBox} id={styles.smallBox}>
+                    <h1 style={{fontSize: 60}}>
+                        Recycling als Lösung
+                    </h1>
+                    <p style={{fontSize: 40}}>
+                        Bitte hier Text für "Recycling als Lösung" einfügen.
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+    function BoxFacts() {
+        return (
+            <div className={styles.centered}>
+                <div className={styles.transparentBox} id={styles.largeBox}>
+                    <h1 style={{fontSize: 60}}>
+                        Facts
+                    </h1>
+                </div>
+            </div>
+        )
+    }
+
+    function BoxInfografik() {
+        return (
+            <div className={styles.centered}>
+                <div className={styles.transparentBox} id={styles.largeBox}>
+                    <h1 style={{fontSize: 60}}>
+                        {/*Hier Header einfügen, falls notwendig*/}
+                    </h1>
+                </div>
+            </div>
+        )
+    }
+
+    const handleFormButtonClick = () => {
+        window.location.href = './formular/page.tsx';
     };
-        return(
-            <div style={rectangleStyle}>
-            Informationen über die verfügbaren Ressourcen der Welt test
-            </div>
-        )
-    }
-    function RectangleRecyclingInformation(){
-        const rectangleStyle = {
-            width: '100%',
-            height: '500px',
-            opacity: '80%',
-            backgroundColor: 'darkgrey',
-        };
-        return(
-            <div style={rectangleStyle}>
-                Recycling Informationen
-            </div>
-        )
-    }
-    function RectangleFacts(){
-        const rectangleStyle = {
-            width: '100%',
-            height: '500px',
-            opacity: '60%',
-            backgroundColor: 'darkgrey',
-        };
-        return(
-            <div style={rectangleStyle}>
-                Fakten über Smartphone + Ressourcen
-            </div>
-        )
-    }
-    function RectangleInfographics(){
-        const rectangleStyle = {
-            width: '100%',
-            height: '500px',
-            opacity: '40%',
-            backgroundColor: 'darkgrey',
-        };
-        return(
-            <div style={rectangleStyle}>
-                Hier wird eine Infografik entstehen
-            </div>
-        )
-    }
 
-
+    function ButtonToFormPage() {
+        return (
+            <div className={styles.centered}>
+                <a href="/formular">
+                    <button id={styles.buttonToForm}>
+                        ZUM KONTAKTFORMULAR
+                    </button>
+                </a>
+            </div>
+        )
+    }
 
     return(
         <main>
             <Hero></Hero>
-            <Link className={styles.linkStyle} href="/formular">Hier geht's zum Formular mit den Kommentaren</Link>
-            <RectangleResourceInformation></RectangleResourceInformation>
-            <RectangleRecyclingInformation></RectangleRecyclingInformation>
-            <RectangleFacts></RectangleFacts>
-            <RectangleInfographics></RectangleInfographics>
-
-
+            <BoxVerschwenderischerLebenstil></BoxVerschwenderischerLebenstil>
+            <BoxRecyclingAlsLoesung></BoxRecyclingAlsLoesung>
+            <BoxFacts></BoxFacts>
+            <BoxInfografik></BoxInfografik>
+            <ButtonToFormPage></ButtonToFormPage>
         </main>
     )
 }
