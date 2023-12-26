@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={viga.className}>
+    <html lang="en" >
     <body className={styles.body}>
         <HeaderRectangle></HeaderRectangle>
         {children}

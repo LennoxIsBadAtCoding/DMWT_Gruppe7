@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gothic A1'), url('/fonts/GothicA1-Regular.ttf') format('truetype');
+}
 
-.body{
-    background-image:url("../public/Background.svg");
-    background-position: center;
-    background-repeat: repeat;
-    background-size: auto;
-    margin: 0 auto;
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    src: local('Viga'), url('/fonts/Viga-Regular.ttf') format('truetype');
 }
 
 .mockupmenutext{
@@ -17,6 +19,15 @@
     font-size: 2em;
     color: #FFFFFF;
 }
+.body{
+    background-image: url(../public/Background.svg);
+    image-rendering: auto;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: auto;
+    margin: 0 auto;
+}
+
 
 .footer{
     left: 0;
