@@ -1,5 +1,6 @@
 import styles from "../styles/Layout.module.css"
 import React from "react";
+import { viga, gothica1 } from "../styles/fonts";
 
 export const metadata = {
   title: 'Next.js',
@@ -43,12 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-    <head>
-      {/*<style>
-        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
-      </style>*/}
-    </head>
+    <html lang="en" className={viga.className}>
     <body className={styles.body}>
         <HeaderRectangle></HeaderRectangle>
         {children}
