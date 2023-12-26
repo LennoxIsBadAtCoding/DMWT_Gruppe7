@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
+
 .body{
     background-image:url("../public/Background.svg");
     background-position: center;
@@ -11,7 +13,7 @@
     padding-right: 1em;
     text-align: right;
     line-height: 80px;
-    font-family: var(--font-gothic);
+    font-family: 'Gothic A1';
     font-size: 2em;
     color: #FFFFFF;
 }

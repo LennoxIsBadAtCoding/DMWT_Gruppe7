@@ -1,5 +1,5 @@
 import { Viga, Gothic_A1 } from 'next/font/google'
-import styles from './Layout.module.css'
+import styles from 'Layout.module.css'
 
 export const viga = Viga({
     weight: "400",
