@@ -1,12 +1,20 @@
-.h1{
-    text-align: center;
-    margin-top: 300px;
-    font-size: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
+
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gothic A1'), url('/fonts/GothicA1-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-style: normal;
+    font-weight: 400;
+    src: local('Viga'), url('/fonts/Viga-Regular.ttf') format('truetype');
 }
 
 .WebsiteTitle{
     color: #FFF;
-    font-family: Viga;
+    font-family: 'Viga', sans-serif;
     font-size: 4em;
     font-style: normal;
     font-weight: 400;
@@ -47,12 +55,14 @@
     color: white;
     padding-left: 4%;
     padding-top: 1.5%;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 #buttonToForm{
     margin-top: 300px;
     margin-bottom: 200px;
     border-radius: 50px;
+    font-family: 'Viga', sans-serif;
     font-size: 30px;
     height: 150px;
     width: 475px;
@@ -71,4 +81,8 @@
     font-size: 3em;
     text-decoration: underline dotted;
     color: lightblue;
+}
+
+.headerFont{
+    font-family: 'Viga', sans-serif;
 }

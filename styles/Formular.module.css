@@ -1,11 +1,12 @@
-
 .comment{
     color: #FFFFFF;
 }
+
 #commentBox{
     margin: auto;
     width: 30%;
 }
+
 #inputData{
     color: #FFFFFF;
 }
@@ -21,6 +22,7 @@
     text-align: center;
     color: #FFFFFF;
 }
+
 .errorMessage{
     color: #FFFFFF;
 }

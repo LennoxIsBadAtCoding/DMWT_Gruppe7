@@ -10,15 +10,68 @@
     src: local('Viga'), url('/fonts/Viga-Regular.ttf') format('truetype');
 }
 
-.mockupmenutext{
+
+.blocker{
+    height: 80px;
+    color: transparent;
+    z-index: -3;
+}
+
+.menuBarContainer {
+    position: fixed;
+    z-index: 999;
+    display: flex;
+}
+
+#left{
+    width: 50%;
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-left: 30px;
+}
+
+#right{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.navigationContent{
     margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
     padding-right: 1em;
     text-align: right;
     line-height: 80px;
-    font-family: 'Gothic A1';
+    font-family: 'Gothic A1', sans-serif;
     font-size: 2em;
     color: #FFFFFF;
 }
+
+.menuButton{
+    width: 5%;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    padding: 0;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+.menuText{
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+.separator{
+    width: 2px;
+    background-color: white;
+    height: 35px;
+    margin-right: -2em;
+    margin-top: 12.5px;
+}
+
 .body{
     background-image: url(../public/Background.svg);
     image-rendering: auto;
@@ -27,7 +80,6 @@
     background-size: auto;
     margin: 0 auto;
 }
-
 
 .footer{
     left: 0;
@@ -40,6 +92,7 @@
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 .footerContent{

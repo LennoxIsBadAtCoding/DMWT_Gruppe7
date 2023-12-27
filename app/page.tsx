@@ -1,4 +1,3 @@
-import Link from "next/link"
 import React from "react";
 import styles from "../styles/MainPage.module.css"
 
@@ -22,7 +21,7 @@ export default function MainPage() {
         return (
             <div className={styles.centered}>
                 <div className={styles.transparentBox} id={styles.smallBox}>
-                    <h1 style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         Unser verschwenderischer Lebensstil
                     </h1>
                     <p style={{fontSize: 40}}>
@@ -35,9 +34,9 @@ export default function MainPage() {
 
     function BoxRecyclingAlsLoesung() {
         return (
-            <div className={styles.centered}>
+            <div className={styles.centered} id="recycling">
                 <div className={styles.transparentBox} id={styles.smallBox}>
-                    <h1 style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         Recycling als Lösung
                     </h1>
                     <p style={{fontSize: 40}}>
@@ -50,9 +49,9 @@ export default function MainPage() {
 
     function BoxFacts() {
         return (
-            <div className={styles.centered}>
+            <div className={styles.centered} id="facts">
                 <div className={styles.transparentBox} id={styles.largeBox}>
-                    <h1 style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         Facts
                     </h1>
                 </div>
@@ -62,9 +61,9 @@ export default function MainPage() {
 
     function BoxInfografik() {
         return (
-            <div className={styles.centered}>
+            <div className={styles.centered} id="infografik">
                 <div className={styles.transparentBox} id={styles.largeBox}>
-                    <h1 style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         {/*Hier Header einfügen, falls notwendig*/}
                     </h1>
                 </div>
@@ -78,7 +77,7 @@ export default function MainPage() {
 
     function ButtonToFormPage() {
         return (
-            <div className={styles.centered}>
+            <div className={styles.centered} id="contactButton">
                 <a href="/formular">
                     <button id={styles.buttonToForm}>
                         ZUM KONTAKTFORMULAR
