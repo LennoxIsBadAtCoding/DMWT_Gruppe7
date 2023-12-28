@@ -1,35 +1,15 @@
 "use client";
 import Link from 'next/link';
-import React from 'react';
-import styles from "../../styles/Formular.module.css";
+import React, {useEffect} from 'react';
+import stylesForm from "../../styles/Formular.module.css";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import {set, useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import styles from "../../styles/MainPage.module.css";
+
 
 export default function Formular () {
-
-    function Rectangle(){
-        const rectangleStyle = {
-            width: '900px',
-            height: '400px',
-            backgroundColor: 'darkgrey',
-        };
-        return(
-            <div style={rectangleStyle}>
-                <h1>Formular</h1>
-
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" />
-                <br/>
-                <label htmlFor="email">Email:</label>
-                <input type="text" id="email" name="email" />
-                <br/>
-                <label htmlFor="anmerkungen">Anmerkungen:</label>
-                <input type="text" id="anmerkungen" name="anmerkungen" />
-            </div>
-        )
-    }
 
     const SignupSchema = yup.object().shape({
         firstName: yup.string().required("Please tell us, how we should address you"),
@@ -38,38 +18,85 @@ export default function Formular () {
         userComment: yup.string().required("Please tell us what you want to know in the comment input")
             .max(300, "The comment can't be longer than 300 characters")
     });
+
     // form for user input
     function App() {
         const {register,
             handleSubmit,
             formState: {errors}
         } = useForm({resolver: yupResolver(SignupSchema)});
+
         const [data, setData] = useState("");
 
+        async function makeApiRequest(information:string) {
+            try {
+                if(information == ""){
+                    return;
+                }
+                let jsonObject = JSON.parse(information);
+                const response = await fetch(`http://localhost:3000/api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                const apiResponse = await response.json();
+                console.log('API response:', apiResponse);
+
+                // Process the data as needed
+                return data;
+            } catch (error) {
+                console.error('Error making API request:', error.message);
+                throw error; // Re-throw the error if needed
+            }
+        }
+
         return (
-            <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+            <form  onSubmit={handleSubmit((data) => makeApiRequest(
+                JSON.stringify(data)).then(r => <p>Alles klar wir haben deine Nachricht erhalten</p>))}>
                 <div>
-                <input {...register("firstName")} placeholder="First name"/>
-                {errors.firstName && <p className={styles.errorMessage}>{errors.firstName.message}</p>}
+                    <input {...register("firstName")} placeholder="Dein Name"
+                           className={stylesForm.inputStyle}/>
+                {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
                 </div>
                 <div>
-                <input {...register("eMail")} placeholder="E-mail"/>
-                {errors.eMail && <p className={styles.errorMessage}>{errors.eMail.message}</p>}
+                <input {...register("eMail")} placeholder="Deine E-mail"
+                       className={stylesForm.inputStyle}/>
+                {errors.eMail && <p className={stylesForm.errorMessage}>{errors.eMail.message}</p>}
                 </div>
                 <div>
-                <input {...register("userComment")} placeholder="Comment"/>
-                {errors.userComment && <p className={styles.errorMessage}>{errors.userComment.message}</p>}
+                <input {...register("userComment")} placeholder="Dein Comment an uns"
+                       className={stylesForm.inputStyle}/>
+                {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
                 </div>
-                <p id={styles.inputData}>{data}</p>
-                <input type="submit"/>
+                <input className={stylesForm.inputStyle} type="submit"/>
             </form>
         );
     }
 
+    function ButtonToMainPage() {
+        return (
+            <div  className={stylesForm.centered} id={stylesForm.returnButton}>
+                <a href="/">
+                    <button id={styles.buttonToForm}>
+                        Zur Startseite
+                    </button>
+                </a>
+            </div>
+        )
+    }
+
     return (
         <main>
-            <App></App>
-            <Link className={styles.linkStyle} href="/">Hier geht's wieder zurück zur Startseite</Link>
+            <div className={stylesForm.centered}>
+                <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
+                    <div>
+                    <h1 className={stylesForm.h1} style={{fontSize: 60}}>
+                        Formular
+                    </h1>
+                    </div>
+                    <App></App>
+                </div>
+            </div>
+            <ButtonToMainPage></ButtonToMainPage>
         </main>
     )
 }
