@@ -34,7 +34,11 @@ export default function Formular () {
                     return;
                 }
                 let jsonObject = JSON.parse(information);
-                const response = await fetch(`http://localhost:3000/api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
+                // todo: instead of local host get current opened url (either localhost or https://dmwt-gruppe7.vercel.app)
+                let stringo = window.location.href;
+                stringo = stringo.substring(0, stringo.length - 8);
+                console.log(stringo);
+                const response = await fetch(`${stringo}api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
                 if (!response.ok) {
                     throw new Error(`API request failed with status ${response.status}`);
                 }
@@ -44,8 +48,7 @@ export default function Formular () {
                 // Process the data as needed
                 return data;
             } catch (error) {
-                console.error('Error making API request:', error.message);
-                throw error; // Re-throw the error if needed
+                console.error('Den Kommentar hast du uns schon einmal geschickt!');
             }
         }
 
