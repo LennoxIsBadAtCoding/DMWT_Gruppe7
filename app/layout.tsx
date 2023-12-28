@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" >
     <body className={styles.body}>
-        <HeaderMenu></HeaderMenu>
+        {/*<HeaderMenu></HeaderMenu>*/}
         {children}
         <Footer></Footer>
     </body>

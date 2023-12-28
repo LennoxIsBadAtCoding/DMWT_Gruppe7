@@ -7,6 +7,7 @@ import {set, useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "../../styles/MainPage.module.css";
+import HeaderWithLogo from "../components/HeaderWithLogo";
 
 
 export default function Formular () {
@@ -80,7 +81,7 @@ export default function Formular () {
             <div  className={stylesForm.centered} id={stylesForm.returnButton}>
                 <a href="/">
                     <button id={styles.buttonToForm}>
-                        Zur Startseite
+                        ZUR STARTSEITE
                     </button>
                 </a>
             </div>
@@ -89,6 +90,7 @@ export default function Formular () {
 
     return (
         <main>
+            <HeaderWithLogo></HeaderWithLogo>
             <div className={stylesForm.centered}>
                 <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
                     <div>

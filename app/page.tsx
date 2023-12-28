@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/MainPage.module.css"
+import HeaderMenu from "./components/HeaderMenu";
 
 export default function MainPage() {
     function Hero() {
@@ -89,6 +90,7 @@ export default function MainPage() {
 
     return(
         <main>
+            <HeaderMenu></HeaderMenu>
             <Hero></Hero>
             <BoxVerschwenderischerLebenstil></BoxVerschwenderischerLebenstil>
             <BoxRecyclingAlsLoesung></BoxRecyclingAlsLoesung>
