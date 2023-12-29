@@ -7,7 +7,7 @@ import Image from "next/image";
 import HeaderMenu from "./components/HeaderMenu";
 import {constants} from "os";
 import {Button, Link} from 'react-scroll';
-
+import ImageChange from './changeImage';
 export default function MainPage() {
     function Hero() {
         return (
@@ -35,6 +35,7 @@ export default function MainPage() {
                     <p style={{fontSize: 40}}>
                         Bitte hier Text für "Unser verschwenderischer Lebensstil" einfügen.
                     </p>
+                    <img src={'./ErdeRessourcenverbrauch.svg'} id={styles.earthRessources}/>
                 </div>
             </div>
         )
@@ -62,6 +63,17 @@ export default function MainPage() {
                     <h1 className={stylesLayout.Text} style={{fontSize: 60}}>
                         Facts
                     </h1>
+                    <div className={styles.container}>
+                        <div className={styles.roundSquare}>210 Mio.</div>
+                        <div className={styles.roundSquare}>2.5 Jahre</div>
+                        <div className={styles.roundSquare}>5.3 Mrd.</div>
+                    </div>
+                    <div className={styles.container}>
+                        <div className={styles.infoBox}>Handys liegen in Deutschen Schubladen</div>
+                        <div className={styles.infoBox}>nutzt ein Durchschnitsdeutscher sein Handy bis er sich ein neues kauft</div>
+                        <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
+                    </div>
+                    <img src={'./handyMitRohstoffe.svg'} id={styles.handyRessources}/>
                 </div>
             </div>
         )
@@ -71,9 +83,11 @@ export default function MainPage() {
         return (
             <div className={styles.centered} id="infografik">
                 <div className={styles.transparentBox} id={styles.largeBox}>
-                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
-                        {/*Hier Header einfügen, falls notwendig*/}
-                    </h1>
+                    <p style={{fontSize: 50}}>
+                        Wenn du auf das Handy klickst kannst du dir den Recycling Prozess genauer anschauen
+                    </p>
+                    <button id={styles.startSquare}>Starte von vorne</button>
+                    <ImageChange></ImageChange>
                 </div>
             </div>
         )

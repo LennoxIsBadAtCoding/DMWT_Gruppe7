@@ -81,7 +81,72 @@
     padding-top: 1.5%;
     font-family: 'Gothic A1', sans-serif;
 }
-
+.container{
+    display: flex;
+}
+#earthRessources{
+    width: 400px;
+    height: 400px;
+    margin-left: 1500px;
+}
+.roundSquare{
+    width:500px;
+    height: 100px;
+    background-color: cornflowerblue;
+    border-radius: 60px;
+    margin-right: 350px;
+    font-family: 'Viga', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 55px;
+}
+.infoBox{
+    color:white;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 35px;
+    margin-right: 300px;
+    width: 500px;
+    height: 120px;
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 160px;
+}
+#handyRessources{
+    margin-left: 350px;
+}
+#handyInfographic{
+    width: 1500px;
+    height: 700px;
+    margin-top: 30px;
+    margin-left: 550px;
+}
+#handyInfographic:hover{
+    cursor: pointer;
+}
+#startSquare{
+    width: 300px;
+    height: 80px;
+    background-color: #6145d2;
+    border-radius: 60px;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 35px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+#startSquare:hover{
+    cursor: pointer;
+    background-color: #593ec5;
+    font-size: 37px;
+    transition: 0.5s;
+}
 #buttonToForm{
     margin-top: 300px;
     margin-bottom: 200px;
@@ -99,6 +164,7 @@
     background-color: #45AA9F;
     font-size: 32px;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .linkStyle{
