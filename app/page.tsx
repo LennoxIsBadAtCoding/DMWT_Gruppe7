@@ -32,8 +32,8 @@ export default function MainPage() {
                     <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         Unser verschwenderischer Lebensstil
                     </h1>
-                    <p style={{fontSize: 40}} className={styles.Text}>
-                        Bitte hier Text für "Unser verschwenderischer Lebensstil" einfügenkkk.
+                    <p style={{fontSize: 40}}>
+                        Bitte hier Text für "Unser verschwenderischer Lebensstil" einfügen.
                     </p>
                 </div>
             </div>

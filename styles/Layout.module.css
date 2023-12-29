@@ -4,8 +4,21 @@
 
 .blocker{
     height: 80px;
-    color: transparent;
-    z-index: -3;
+    color: #141727;
+    z-index: 1000;
+}
+
+.logo{
+    width: 90px;
+    margin-top: -23px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.logo:hover{
+    width: 100px;
+    transition: 0.5s;
 }
 
 .menuBarContainer {
@@ -40,12 +53,16 @@
 }
 
 .menuButton{
-    width: 5%;
+    width: 10%;
     height: 60px;
     background-color: transparent;
     border: none;
+    display:flex;
     text-align: center;
+    justify-content: center;
     padding: 0;
+    margin-top: 14px;
+    margin-left: 7%;
     font-family: 'Gothic A1', sans-serif;
 }
 
@@ -53,6 +70,11 @@
     font-family: 'Gothic A1', sans-serif;
     font-size: 2em;
     color: white;
+}
+
+.menuText:hover{
+    font-size: 2.1em;
+    transition: 0.5s;
 }
 
 .separator{

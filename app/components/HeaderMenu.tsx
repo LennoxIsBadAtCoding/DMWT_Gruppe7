@@ -18,9 +18,9 @@ function HeaderMenu() {
                 <div id={styles.left}>
                     <Link activeClass="active" to="top" spy={true} smooth={true} offset={50} duration={500}>
                         <Image
+                            className={styles.logo}
                             src={logo}
                             alt="socket in earth"
-                            width={90}
                         ></Image>
                     </Link>
                 </div>
@@ -34,7 +34,7 @@ function HeaderMenu() {
                         <div className={styles.separator}></div>
                         <Button className={styles.menuButton} to="facts">
                             <Link className={styles.menuText} activeClass="active" to="facts" spy={true} smooth={true} offset={50} duration={500}>
-                                &nbsp;&nbsp;&nbsp;Facts
+                                Facts
                             </Link>
                         </Button>
                         <div className={styles.separator}></div>

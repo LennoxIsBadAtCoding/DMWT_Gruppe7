@@ -18,9 +18,9 @@ function HeaderWithLogo() {
                 <div id={styles.left}>
                     <a href="/">
                         <Image
+                            className={styles.logo}
                             src={logo}
                             alt="socket in earth"
-                            width={90}
                         ></Image>
                     </a>
                 </div>
