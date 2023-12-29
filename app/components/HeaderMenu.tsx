@@ -26,25 +26,25 @@ function HeaderMenu() {
                 </div>
                 <div id={styles.right}>
                     <nav className={styles.navigationContent}>
-                        <Button className={styles.menuButton}>
+                        <Button className={styles.menuButton} to="recycling">
                             <Link className={styles.menuText} activeClass="active" to="recycling" spy={true} smooth={true} offset={50} duration={500}>
                                 Recycling
                             </Link>
                         </Button>
                         <div className={styles.separator}></div>
-                        <Button className={styles.menuButton}>
+                        <Button className={styles.menuButton} to="facts">
                             <Link className={styles.menuText} activeClass="active" to="facts" spy={true} smooth={true} offset={50} duration={500}>
                                 &nbsp;&nbsp;&nbsp;Facts
                             </Link>
                         </Button>
                         <div className={styles.separator}></div>
-                        <Button className={styles.menuButton}>
+                        <Button className={styles.menuButton} to="infografik">
                             <Link className={styles.menuText} activeClass="active" to="infografik" spy={true} smooth={true} offset={50} duration={500}>
                                 Infografik
                             </Link>
                         </Button>
                         <div className={styles.separator}></div>
-                        <Button className={styles.menuButton}>
+                        <Button className={styles.menuButton} to="contactButton">
                             <Link className={styles.menuText} activeClass="active" to="contactButton" spy={true} smooth={true} offset={50} duration={500}>
                                 Kontakt
                             </Link>

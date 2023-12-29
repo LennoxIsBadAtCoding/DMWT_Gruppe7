@@ -1,7 +1,5 @@
 import styles from "../styles/Layout.module.css"
 import React from "react";
-import Head from 'next/head';
-import HeaderMenu from "./components/HeaderMenu";
 import Footer from "./components/Footer";
 
 export const metadata = {

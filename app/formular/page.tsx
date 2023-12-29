@@ -6,7 +6,6 @@ import { useState } from "react";
 import {set, useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import styles from "../../styles/MainPage.module.css";
 import HeaderWithLogo from "../components/HeaderWithLogo";
 
 
@@ -15,9 +14,9 @@ export default function Formular () {
     const SignupSchema = yup.object().shape({
         firstName: yup.string().required("Please tell us, how we should address you"),
         eMail: yup.string().required("Must be a valid E-Mail address")
-            .email("Must be a valid E-Mail address"),
-        userComment: yup.string().required("Please tell us what you want to know in the comment input")
-            .max(300, "The comment can't be longer than 300 characters")
+            .email("Es muss eine gültige E-Mail sein =)"),
+        userComment: yup.string().required("Bitte erzähl uns, was du wissen möchtest im Kommentarfeld")
+            .max(300, "Kommentare können nicht länger als 300 Buchstaben sein")
     });
 
     // form for user input
@@ -35,10 +34,8 @@ export default function Formular () {
                     return;
                 }
                 let jsonObject = JSON.parse(information);
-                // todo: instead of local host get current opened url (either localhost or https://dmwt-gruppe7.vercel.app)
                 let stringo = window.location.href;
                 stringo = stringo.substring(0, stringo.length - 8);
-                console.log(stringo);
                 const response = await fetch(`${stringo}api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
                 if (!response.ok) {
                     throw new Error(`API request failed with status ${response.status}`);
@@ -71,20 +68,18 @@ export default function Formular () {
                        className={stylesForm.inputStyle}/>
                 {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
                 </div>
-                <input className={stylesForm.inputStyle} type="submit"/>
+                <input className={stylesForm.inputStyle} type="submit" value={"Daten abschicken"}/>
             </form>
         );
     }
 
     function ButtonToMainPage() {
         return (
-            <div  className={stylesForm.centered} id={stylesForm.returnButton}>
-                <a href="/">
-                    <button id={styles.buttonToForm}>
+                <a href="/" style={{textDecoration:"none"}}>
+                    <button id={stylesForm.buttonToMainPage}>
                         ZUR STARTSEITE
                     </button>
                 </a>
-            </div>
         )
     }
 
@@ -95,7 +90,7 @@ export default function Formular () {
                 <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
                     <div>
                     <h1 className={stylesForm.h1} style={{fontSize: 60}}>
-                        Formular
+                        Kontaktformular
                     </h1>
                     </div>
                     <App></App>

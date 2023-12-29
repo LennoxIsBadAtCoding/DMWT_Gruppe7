@@ -1,17 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
 
-@font-face {
-    font-style: normal;
-    font-weight: 400;
-    src: local('Gothic A1'), url('/fonts/GothicA1-Regular.ttf') format('truetype');
-}
+#Hero {
+    image-rendering: high-quality;
+    image-resolution: inherit;
+    object-fit: fill;
+    display: block;
+    margin: auto;
+    position: relative;
 
-@font-face {
-    font-style: normal;
-    font-weight: 400;
-    src: local('Viga'), url('/fonts/Viga-Regular.ttf') format('truetype');
 }
+.HeroButton{
+    background: transparent;
+    border-color: transparent;
+}
+.HeroButton:hover{
+    cursor: pointer;
+}
+.HeroButton:hover #ButtonForm{
+    fill: black;
+    color: black;
+    transition: 0.3s;
+    fill-opacity: 100%;
+}
+.HeroButton:hover #ArrowLeft{
+    x: 27.6558px;
+    y: 37.7935px;
+    width: 15.0189px;
+    height: 60.0756px;
+    rx: 7.50945px;
 
+}
+.HeroButton:hover #ArrowRight{
+    x: 109.346px;
+    y: 26.2883px;
+    width: 15.0189px;
+    height: 60.0756px;
+    rx: 7.50945px;
+}
 .WebsiteTitle{
     color: #FFF;
     font-family: 'Viga', sans-serif;
@@ -25,11 +50,10 @@
 }
 
 .Text{
+    font-family: 'Gothic A1', sans-serif;
     color: white;
     font-size: 15px;
-    text-align: center;
     padding: 50px;
-
 }
 
 .centered{

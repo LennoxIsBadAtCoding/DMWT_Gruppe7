@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
             <div className={styles.footerContent}>
                 Datenschutz
             </div>
@@ -13,7 +13,7 @@ function Footer() {
             <div className={styles.footerContent}>
                 Kontakt
             </div>
-        </div>
+        </footer>
     )
 }
 

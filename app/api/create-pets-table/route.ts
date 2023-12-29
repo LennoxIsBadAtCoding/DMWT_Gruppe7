@@ -9,14 +9,11 @@ export async function GET(request:Request) {
     const userComment = searchParams.get('userComment');
     try {
         let result =
-            await sql`SELECT name FROM usercontact WHERE name = ${userName} AND email = ${userEmail};`;
-        console.log(result);
+            await sql`SELECT name FROM usercontact WHERE email = ${userEmail};`;
         if(result.rowCount ==  0){
             result = await sql`INSERT INTO usercontact (name, email) VALUES (${userName}, ${userEmail});`;
-            console.log(result);
         }
         result = await sql`INSERT INTO usercomment (userid, comment) VALUES (${userEmail}, ${userComment});`;
-        console.log(result);
         return NextResponse.json({ result }, { status: 200 });
     } catch (error) {
         return NextResponse.json({ error }, { status: 500 });
