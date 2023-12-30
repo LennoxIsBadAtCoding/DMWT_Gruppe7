@@ -86,10 +86,10 @@
 }
 
 .body{
-    image-rendering: high-quality;
     background: url(../public/Background.svg) repeat;
-    background-size: contain;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
 }
 
 .footer{
