@@ -75,8 +75,7 @@
 .transparentBox{
     width: 85%;
     border-radius: 50px;
-    background-color: #10121E;
-    opacity: 80%;
+    background-color: rgba(16, 18, 30, 0.8);
     margin-top: 70px;
     color: white;
     padding-left: 4%;
