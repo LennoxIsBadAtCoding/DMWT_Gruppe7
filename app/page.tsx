@@ -3,15 +3,11 @@ import React from "react";
 import styles from "../styles/MainPage.module.css";
 import stylesLayout from "../styles/Layout.module.css";
 import smartphoneGIF from '/public/FlyingSmartphones.gif';
-import heroBackground from '/public/HeroBackground.svg';
 import Image from "next/image";
 import HeaderMenu from "./components/HeaderMenu";
 import {Button, Link} from 'react-scroll';
 import ImageChange from './changeImage';
-// {/*<Image id={styles.HeroBackground}*/}
-// {/*    src={heroBackground}*/}
-// {/*    alt={"Space background with stars and a planet and the title recharge the source"}*/}
-// {/*></Image>*/}
+
 export default function MainPage() {
     function Hero() {
         return (
@@ -95,14 +91,7 @@ export default function MainPage() {
             </div>
         )
     };
-    // <Image
-    //     priority = {true}
-    //     id={styles.Hero}
-    //     width={"1920"}
-    //     height={"1080"}
-    //     src={hero}
-    //     alt="Animated hero, that shows the space with an earth with stars. Sometimes smartphones pass by"
-    // ></Image>
+
     function BoxVerschwenderischerLebenstil() {
         return (
             <div className={styles.centered} style={{position:"relative"}}
@@ -171,20 +160,16 @@ export default function MainPage() {
                     <p style={{fontSize: 50}}>
                         Wenn du auf das Handy klickst kannst du dir den Recycling Prozess genauer anschauen
                     </p>
-                    <button id={styles.startSquare}>Starte von vorne</button>
                     <ImageChange></ImageChange>
                 </div>
             </div>
         )
     };
 
-    const handleFormButtonClick = () => {
-        window.location.href = './formular/page.tsx';
-    };
 
     function ButtonToFormPage() {
         return (
-            <div className={styles.centered} id="contactButton">
+            <div className={styles.buttonToFormPageBox} id="contactButton">
                 <a href="/formular">
                     <button id={styles.buttonToForm}>
                         ZUM KONTAKTFORMULAR

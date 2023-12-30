@@ -9,12 +9,17 @@ export default function ImageChange() {
             displayImageRef.current.src = './HandyMitAkku.svg';
         }else if(displayImageRef.current && displayImageRef.current.src.match('./HandyMitAkku.svg')){
             displayImageRef.current.src = './HandyMitPlatine.svg';
-        }else{
-            displayImageRef.current.src = './HandyMitZerbrochenemGlas.svg';
         }
             };
+    const handleButtonClick = () => {
+        displayImageRef.current.src = './HandyMitZerbrochenemGlas.svg';
+    };
+
     return (
-        <img ref={displayImageRef} src="./HandyMitZerbrochenemGlas.svg"
+        <div>
+            <button onClick={handleButtonClick} id={styles.startSquare}>Starte von vorne</button>
+            <img ref={displayImageRef} src="./HandyMitZerbrochenemGlas.svg"
             alt="Kaputtes Handy" onClick={handleImageClick} id={styles.handyInfographic}/>
+         </div>
     );
 }

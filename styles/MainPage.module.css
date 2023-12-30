@@ -166,6 +166,13 @@
     font-size: 37px;
     transition: 0.5s;
 }
+.buttonToFormPageBox{
+        position: relative;
+        margin: auto;
+        height: 150px;
+        width: 475px;
+        transform: translateY(-30rem);
+}
 #buttonToForm{
     margin-top: 300px;
     margin-bottom: 200px;

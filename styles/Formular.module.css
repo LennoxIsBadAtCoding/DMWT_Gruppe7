@@ -27,7 +27,13 @@
     font-weight: 500;
     border-radius: 15px;
 }
-
+#submitButton{
+    background-color: #20D7C4;
+}
+#submitButton:hover{
+    cursor: pointer;
+    font-size: 50px;
+}
 .comment{
     color: #FFFFFF;
 }
@@ -46,7 +52,6 @@
 }
 
 .App {
-    font-family: "Comic Sans MS", serif;
     text-align: center;
     color: #FFFFFF;
 }
@@ -77,10 +82,17 @@
     padding-left: 4%;
     padding-top: 1.5%;
 }
+#buttonToMainPageBox{
+    position: relative;
+    margin: auto;
+    height: 150px;
+    width: 475px;
+    transform: translateY(-15rem);
+}
 #buttonToMainPage{
     display: block;
-    margin: 300px auto 200px;
     border-radius: 50px;
+    margin: 300px auto 200px;
     font-family: 'Viga', sans-serif;
     font-size: 30px;
     height: 150px;
@@ -91,6 +103,7 @@
 }
 
 #buttonToMainPage:hover{
+    cursor: pointer;
     background-color: #2c61d1;
     font-size: 32px;
     transition: 0.5s;

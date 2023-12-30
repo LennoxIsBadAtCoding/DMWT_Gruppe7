@@ -1,5 +1,4 @@
 "use client";
-import Link from 'next/link';
 import React, {useEffect} from 'react';
 import stylesForm from "../../styles/Formular.module.css";
 import { useState } from "react";
@@ -9,7 +8,7 @@ import * as yup from "yup";
 import HeaderWithLogo from "../components/HeaderWithLogo";
 
 
-export default function Formular () {
+export default function Form () {
 
     const SignupSchema = yup.object().shape({
         firstName: yup.string().required("Please tell us, how we should address you"),
@@ -34,9 +33,9 @@ export default function Formular () {
                     return;
                 }
                 let jsonObject = JSON.parse(information);
-                let stringo = window.location.href;
-                stringo = stringo.substring(0, stringo.length - 8);
-                const response = await fetch(`${stringo}api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
+                let currentWindowAsString = window.location.href;
+                currentWindowAsString = currentWindowAsString.substring(0, currentWindowAsString.length - 8);
+                const response = await fetch(`${currentWindowAsString}api/create-pets-table?firstName=${jsonObject.firstName}&eMail=${jsonObject.eMail}&userComment=${jsonObject.userComment}`);
                 if (!response.ok) {
                     throw new Error(`API request failed with status ${response.status}`);
                 }
@@ -44,6 +43,7 @@ export default function Formular () {
                 console.log('API response:', apiResponse);
 
                 // Process the data as needed
+
                 return data;
             } catch (error) {
                 console.error('Den Kommentar hast du uns schon einmal geschickt!');
@@ -68,18 +68,22 @@ export default function Formular () {
                        className={stylesForm.inputStyle}/>
                 {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
                 </div>
-                <input className={stylesForm.inputStyle} type="submit" value={"Daten abschicken"}/>
+                <input className={stylesForm.inputStyle} id={stylesForm.submitButton} type="submit" value={"Daten abschicken"}/>
             </form>
         );
     }
 
     function ButtonToMainPage() {
         return (
-                <a href="/" style={{textDecoration:"none"}}>
+
+            <div id={stylesForm.buttonToMainPageBox}>
+                <a href="/" style={{textDecoration:"none", width:"475px"}}>
                     <button id={stylesForm.buttonToMainPage}>
                         ZUR STARTSEITE
                     </button>
                 </a>
+            </div>
+
         )
     }
 
@@ -88,11 +92,9 @@ export default function Formular () {
             <HeaderWithLogo></HeaderWithLogo>
             <div className={stylesForm.centered}>
                 <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
-                    <div>
                     <h1 className={stylesForm.h1} style={{fontSize: 60}}>
                         Kontaktformular
                     </h1>
-                    </div>
                     <App></App>
                 </div>
             </div>
