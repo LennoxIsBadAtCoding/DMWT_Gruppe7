@@ -103,10 +103,10 @@ export default function MainPage() {
 
                     <text style={{fontSize: 40}}>
                         Drei Erden bräuchten wir, wenn alle so leben würden wie wir in Deutschland, sagt Statista.
-                        Wahnsinn oder? Aber nicht nur das, in den letzten Jahren wurden noch immer 19-22 Millionen Smartphones in Deutschland
+                        Wahnsinn, oder? Aber nicht nur das, in den letzten Jahren wurden noch immer 19-22 Millionen Smartphones in Deutschland
                         pro Jahr verkauft. Doch was passiert mit den alten Smartphones? Meistens bleiben sie in irgendwelchen
                         Schubladen liegen. Genau deshalb sollten wir uns einmal Gedanken machen, ob und wie jeder
-                        Einzelne einen kleinen, aber feinen Beitrag zur Verbesserung der Welt liefern kann. Und was
+                        Einzelne einen kleinen aber feinen Beitrag zur Verbesserung der Welt liefern kann. Und was
                         ihr mit euren Handys machen könnt, das zeigen wir euch hier auf dieser Webseite!
                     </text>
                     <img src={'./ErdeRessourcenverbrauch.svg'} id={styles.earthRessources}/>
@@ -123,7 +123,23 @@ export default function MainPage() {
                         Recycling als Lösung
                     </h1>
                     <p style={{fontSize: 40}}>
-                        Bitte hier Text für "Recycling als Lösung" einfügen.
+                        Ein Handy enthält zahlreiche Rohstoffe, deren Recycling einen echten Mehrwert
+                        <br/>
+                        für den Energieverbrauch und unsere Umwelt im Allgemeinen liefert. Es ist
+                        <br/>
+                        anzumerken, dass sich das Recycling von manchen Smartphone-Komponenten nicht lohnt,
+                        da es zu einer noch größeren Umweltbelastung führt. Für viele von ihnen jedoch, wie
+                        beispielsweise Gold, Kupfer, Palladium, Silber oder Platin, existieren etablierte
+                        <br/>
+                        Verfahren zur Rückgewinnung. Dadurch sind sie beliebig häufig verwendbar, werden
+                        <br/>
+                        also nie wirklich “verbraucht”. Der reine Metallwert eines Smartphones kann durch das
+                        <br/>
+                        Recycling der fünf genannten Metalle zu 85% wiederhergestellt werden. Somit leistet
+                        <br/>
+                        ihr durch das Recycling deines Smartphones einen nicht zu vernachlässigenden Beitrag
+                        <br/>
+                        für unsere Umwelt!
                     </p>
                 </div>
             </div>
@@ -170,7 +186,7 @@ export default function MainPage() {
     function ButtonToFormPage() {
         return (
             <div className={styles.buttonToFormPageBox} id="contactButton">
-                <a href="/formular">
+                <a href="/formular" className={styles.linkButtonSize}>
                     <button id={styles.buttonToForm}>
                         ZUM KONTAKTFORMULAR
                     </button>

@@ -98,6 +98,7 @@
     padding-left: 4%;
     padding-top: 1.5%;
     font-family: 'Gothic A1', sans-serif;
+    font-size: 35px;
 }
 .container{
     display: flex;
@@ -172,6 +173,14 @@
         width: 475px;
         transform: translateY(-30rem);
 }
+
+.linkButtonSize{
+    height: 150px;
+    width: 475px;
+    padding: 400px;
+    display: block;
+}
+
 #buttonToForm{
     margin-top: 300px;
     margin-bottom: 200px;
