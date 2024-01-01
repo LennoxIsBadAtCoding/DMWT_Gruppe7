@@ -7,6 +7,7 @@ import Image from "next/image";
 import HeaderMenu from "./components/HeaderMenu";
 import {Button, Link} from 'react-scroll';
 import ImageChange from './changeImage';
+import truckGIF from "../public/TruckDrivingAway.gif";
 
 export default function MainPage() {
     function Hero() {
@@ -208,6 +209,7 @@ export default function MainPage() {
             <BoxFacts></BoxFacts>
             <BoxInfografik></BoxInfografik>
             <ButtonToFormPage></ButtonToFormPage>
+            <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>;
         </main>
     )
 }

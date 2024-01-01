@@ -6,7 +6,7 @@ import {set, useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import HeaderWithLogo from "../components/HeaderWithLogo";
-
+import toast, {Toaster} from "react-hot-toast";
 
 export default function Form () {
 
@@ -46,25 +46,45 @@ export default function Form () {
 
                 return data;
             } catch (error) {
-                console.error('Den Kommentar hast du uns schon einmal geschickt!');
+               throw new Error();
             }
         }
 
+        function correctInputResponse(userInformation){
+            const userName = userInformation.firstName;
+            setData("");
+            document.forms['formInput'].reset();
+           // console.log(JSON.stringify(userInformation));
+            toast.promise(makeApiRequest(JSON.stringify(userInformation)).then(r => console.log("hm")),{
+                loading: 'Verarbeite deine Nachricht',
+                success: <b>Hey, wir haben deine Nachricht erhalten {userName}</b>,
+                error: <b>Hey, diese Nachricht kam nicht bei uns an oder du hast sie schonmal geschickt!</b>,
+            } ,{
+                style: {
+                    padding: '16px',
+                },
+                iconTheme: {
+                    primary: '#20D7C4',
+                    secondary: '#FFFFFF',
+                }
+            } );
+        }
+
+
         return (
-            <form  onSubmit={handleSubmit((data) => makeApiRequest(
-                JSON.stringify(data)).then(r => <p>Alles klar wir haben deine Nachricht erhalten</p>))}>
+            <form id= 'formInput' onSubmit={handleSubmit((data) => correctInputResponse(data))}>
                 <div>
-                    <input {...register("firstName")} placeholder="Dein Name"
+                    <input id= "inputName" {...register("firstName")} placeholder="Dein Name"
                            className={stylesForm.inputStyle}/>
                 {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
                 </div>
                 <div>
-                <input {...register("eMail")} placeholder="Deine E-mail"
+                <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail"
                        className={stylesForm.inputStyle}/>
                 {errors.eMail && <p className={stylesForm.errorMessage}>{errors.eMail.message}</p>}
                 </div>
                 <div>
-                <input {...register("userComment")} placeholder="Dein Comment an uns"
+                <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns"
                        className={stylesForm.inputStyle}/>
                 {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
                 </div>
@@ -96,6 +116,11 @@ export default function Form () {
                         Kontaktformular
                     </h1>
                     <App></App>
+                    <Toaster
+                        position="top-center"
+                        reverseOrder={false}
+                        containerStyle={{fontFamily: 'Viga', fontSize: '1.5em'}}
+                    />
                 </div>
             </div>
             <ButtonToMainPage></ButtonToMainPage>

@@ -1,6 +1,7 @@
 'use client'
 import React, { useRef } from 'react';
-import styles from "../styles/MainPage.module.css"
+import styles from "../styles/MainPage.module.css";
+import truckGIF from '../public/TruckDrivingAway.gif';
 export default function ImageChange() {
     const displayImageRef = useRef(null);
 
