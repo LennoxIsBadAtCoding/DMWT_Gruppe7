@@ -57,15 +57,23 @@ export default function Form () {
            // console.log(JSON.stringify(userInformation));
             toast.promise(makeApiRequest(JSON.stringify(userInformation)).then(r => console.log("hm")),{
                 loading: 'Verarbeite deine Nachricht',
-                success: <b>Hey, wir haben deine Nachricht erhalten {userName}</b>,
+                success: <b>Hey, wir haben deine Nachricht erhalten {userName}</b> ,
                 error: <b>Hey, diese Nachricht kam nicht bei uns an oder du hast sie schonmal geschickt!</b>,
             } ,{
                 style: {
                     padding: '16px',
                 },
-                iconTheme: {
-                    primary: '#20D7C4',
-                    secondary: '#FFFFFF',
+                success: {
+                    iconTheme: {
+                        primary: '#20D7C4',
+                        secondary: '#FFFFFF',
+                    }
+                },
+                error: {
+                    iconTheme: {
+                        primary: '#DD6E67',
+                        secondary: '#FFFFFF',
+                    }
                 }
             } );
         }
