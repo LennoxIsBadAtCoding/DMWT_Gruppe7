@@ -110,7 +110,13 @@ export default function MainPage() {
                         Einzelne einen kleinen aber feinen Beitrag zur Verbesserung der Welt liefern kann. Und was
                         ihr mit euren Handys machen könnt, das zeigen wir euch hier auf dieser Webseite!
                     </text>
-                    <img src={'./ErdeRessourcenverbrauch.svg'} id={styles.earthRessources}/>
+                    <div className={styles.container}>
+                        <div className={styles.threeEarths}>
+                            <img src={'./Erde.svg'} className={styles.earth}/>
+                            <img src={'./Erde.svg'} className={styles.earth}/>
+                            <img src={'./Erde.svg'} className={styles.earth}/>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -164,7 +170,7 @@ export default function MainPage() {
                         <div className={styles.infoBox}>nutzt ein Durchschnittsdeutscher sein Handy bis er sich ein neues kauft</div>
                         <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
                     </div>
-                    <img src={'./handyMitRohstoffe.svg'} id={styles.handyRessources}/>
+                    <img src={'./Handybestandteile.svg'} id={styles.handyRessources}/>
                 </div>
             </div>
         )

@@ -103,10 +103,13 @@
 .container{
     display: flex;
 }
-#earthRessources{
-    width: 400px;
-    height: 400px;
-    margin-left: 1500px;
+.earth{
+    width: 250px;
+    height: 250px;
+    margin-left: 90px;
+}
+.threeEarths{
+    margin-left: 900px;
 }
 .roundSquare{
     width:500px;
@@ -136,7 +139,9 @@
     margin-bottom: 160px;
 }
 #handyRessources{
-    margin-left: 350px;
+    width: 1000px;
+    heigth: 1500px;
+    margin-left: 650px;
 }
 #handyInfographic{
     width: 1500px;

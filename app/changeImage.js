@@ -11,7 +11,7 @@ export default function ImageChange() {
         }else if(displayImageRef.current && displayImageRef.current.src.match('./HandyMitAkku.svg')){
             displayImageRef.current.src = './HandyMitPlatine.svg';
         }
-            };
+    };
     const handleButtonClick = () => {
         displayImageRef.current.src = './HandyMitZerbrochenemGlas.svg';
     };
