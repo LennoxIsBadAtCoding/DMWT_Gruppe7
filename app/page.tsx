@@ -91,7 +91,7 @@ export default function MainPage() {
                 ></Image>
             </div>
         )
-    };
+    }
 
     function BoxVerschwenderischerLebenstil() {
         return (
@@ -120,7 +120,7 @@ export default function MainPage() {
                 </div>
             </div>
         )
-    };
+    }
 
     function BoxRecyclingAlsLoesung() {
         return (
@@ -131,27 +131,27 @@ export default function MainPage() {
                     </h1>
                     <p style={{fontSize: 40}}>
                         Ein Handy enthält zahlreiche Rohstoffe, deren Recycling einen echten Mehrwert
-                        <br/>
+
                         für den Energieverbrauch und unsere Umwelt im Allgemeinen liefert. Es ist
-                        <br/>
+
                         anzumerken, dass sich das Recycling von manchen Smartphone-Komponenten nicht lohnt,
                         da es zu einer noch größeren Umweltbelastung führt. Für viele von ihnen jedoch, wie
                         beispielsweise Gold, Kupfer, Palladium, Silber oder Platin, existieren etablierte
-                        <br/>
+
                         Verfahren zur Rückgewinnung. Dadurch sind sie beliebig häufig verwendbar, werden
-                        <br/>
+
                         also nie wirklich “verbraucht”. Der reine Metallwert eines Smartphones kann durch das
-                        <br/>
+
                         Recycling der fünf genannten Metalle zu 85% wiederhergestellt werden. Somit leistet
-                        <br/>
+
                         ihr durch das Recycling deines Smartphones einen nicht zu vernachlässigenden Beitrag
-                        <br/>
+
                         für unsere Umwelt!
                     </p>
                 </div>
             </div>
         )
-    };
+    }
 
     function BoxFacts() {
         return (
@@ -174,7 +174,7 @@ export default function MainPage() {
                 </div>
             </div>
         )
-    };
+    }
 
     function BoxInfografik() {
         return (
@@ -187,20 +187,21 @@ export default function MainPage() {
                 </div>
             </div>
         )
-    };
+    }
 
 
     function ButtonToFormPage() {
         return (
-            <div className={styles.buttonToFormPageBox} id="contactButton">
-                <a href="/formular" className={styles.linkButtonSize}>
-                    <button id={styles.buttonToForm}>
+            <div className={stylesLayout.buttonToOtherPageBox}>
+                <a href="/formular" style={{textDecoration:"none"}}>
+                    <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToForm}>
                         ZUM KONTAKTFORMULAR
                     </button>
                 </a>
             </div>
         )
-    };
+    }
+
     function HeroButton(){
         return(
             <>
@@ -219,7 +220,7 @@ export default function MainPage() {
                 </div>
             </>
         )
-    };
+    }
 
     return(
         <main>

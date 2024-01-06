@@ -1,6 +1,7 @@
 "use client";
 import React, {useEffect} from 'react';
 import stylesForm from "../../styles/Formular.module.css";
+import stylesLayout from "../../styles/Layout.module.css";
 import { useState } from "react";
 import {set, useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -103,10 +104,9 @@ export default function Form () {
 
     function ButtonToMainPage() {
         return (
-
-            <div id={stylesForm.buttonToMainPageBox}>
-                <a href="/" style={{textDecoration:"none", width:"475px"}}>
-                    <button id={stylesForm.buttonToMainPage}>
+            <div className={stylesLayout.buttonToOtherPageBox}>
+                <a href="/" style={{textDecoration:"none"}}>
+                    <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToMainPage}>
                         ZUR STARTSEITE
                     </button>
                 </a>
