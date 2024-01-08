@@ -27,6 +27,7 @@
     object-fit: cover;
     transform: translateY(-75rem);
 }
+
 .HeroButton{
     background: transparent;
     border-color: transparent;
@@ -68,10 +69,10 @@
     padding-right: 2em;
 }
 
-.Text{
+.textSettings{
     font-family: 'Gothic A1', sans-serif;
     color: white;
-    font-size: 15px;
+    font-size: 1.875em;
     padding: 50px;
 }
 
@@ -93,14 +94,14 @@
     position: relative;
     width: 85%;
     border-radius: 50px;
-    background-color: rgba(16, 18, 30, 0.8);
+    background-color: rgba(16, 18, 30, 0.95);
     margin-top: 200px;
     color: white;
     padding-left: 4%;
     padding-right: 4%;
     padding-top: 1.5%;
     font-family: 'Gothic A1', sans-serif;
-    font-size: 35px;
+    font-size: 1.875em;
 }
 .container{
     display: flex;
