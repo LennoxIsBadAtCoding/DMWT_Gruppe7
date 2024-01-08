@@ -72,6 +72,9 @@
     color: black;
     padding: 0px 20px;
     font-family: "Gothic A1";
+    margin-top: 0.25rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
 }
 .centered{
     display: flex;

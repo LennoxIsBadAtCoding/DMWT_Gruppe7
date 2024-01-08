@@ -57,7 +57,7 @@ export default function FormPage () {
             //setData("");
 
             document.forms['formInput'].reset();
-            toast.promise(makeApiRequest(JSON.stringify(userInformation)).then(r => console.log("hm")),{
+            toast.promise(makeApiRequest(JSON.stringify(userInformation)),{
                 loading: 'Verarbeite deine Nachricht',
                 success: <b>Hey, wir haben deine Nachricht erhalten {userName}</b> ,
                 error: <b>Hey, diese Nachricht kam nicht bei uns an oder du hast sie schonmal geschickt!</b>,
@@ -104,7 +104,7 @@ export default function FormPage () {
 
                             <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns"
                                    className={stylesForm.inputStyleComment}/>
-                            {errors.userComment && <p className={stylesForm.errorMessage} style={{marginBottom:"-1.5rem"}}>{errors.userComment.message}</p>}
+                            {errors.userComment && <p className={stylesForm.errorMessage} >{errors.userComment.message}</p>}
                             </div>
 
                             <input id={stylesForm.submitButton} type="submit" value={"Absenden"}/>
