@@ -182,7 +182,7 @@ export default function MainPage() {
         return (
             <div className={styles.centered} id="infografik">
                 <div className={styles.transparentBox} id={styles.largeBox}>
-                    <p style={{fontSize: 50}}>
+                    <p>
                         Wenn du auf das Handy klickst kannst du dir den Recycling Prozess genauer anschauen
                     </p>
 
@@ -243,6 +243,7 @@ export default function MainPage() {
             <BoxVerschwenderischerLebenstil></BoxVerschwenderischerLebenstil>
             <BoxRecyclingAlsLoesung></BoxRecyclingAlsLoesung>
             <BoxFacts></BoxFacts>
+            <BoxInfografik></BoxInfografik>
             <ButtonToFormPage></ButtonToFormPage>
             <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>
             <DragAndDropPart></DragAndDropPart>

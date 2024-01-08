@@ -32,7 +32,9 @@ function DragDrop() {
         document.getElementById("Draggable").style.display = "none";
     }
     const LetOvenDisappear = () =>{
-        setTimeout(( () => document.getElementById("DropPlace").style.display = "none"),3000);
+        setTimeout(( () => {
+            document.getElementById("DropPlace").style.display = "none";
+             }),3000);
     }
     return (
         <>

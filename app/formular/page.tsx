@@ -92,26 +92,25 @@ export default function FormPage () {
                     </h1>
                     <div>
                         <form id= 'formInput' onSubmit={handleSubmit((data) => correctInputResponse(data))}>
-                            <div >
-                                <input id= "inputName" {...register("firstName")} placeholder="Dein Name"
-                                       className={stylesForm.inputStyle}/>
-                            {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
+                            <div style={{display: "flex"}}>
+                                <div style={{width:"70%"}}>
+                                    <input id= "inputName" {...register("firstName")} placeholder="Dein Name"  className={stylesForm.inputStyle}/>
+                                        {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
 
 
-                            <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail"
-                                   className={stylesForm.inputStyle}/>
-                            {errors.eMail && <p className={stylesForm.errorMessage} >{errors.eMail.message}</p>}
+                                    <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail" className={stylesForm.inputStyle}/>
+                                        {errors.eMail && <p className={stylesForm.errorMessage}>{errors.eMail.message}</p>}
 
-                            <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns"
-                                   className={stylesForm.inputStyleComment}/>
-                            {errors.userComment && <p className={stylesForm.errorMessage} >{errors.userComment.message}</p>}
+                                    <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns" className={stylesForm.inputStyleComment}/>
+                                        {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
+                                </div>
+                                <div style={{width:"30%"}}>
+                                    <input id={stylesForm.submitButton} type="submit" value={"Absenden"}/>
+                                </div>
                             </div>
-
-                            <input id={stylesForm.submitButton} type="submit" value={"Absenden"}/>
-
                         </form>
                     </div>
-            </div>
+                </div>
             </div>
         );
     }
