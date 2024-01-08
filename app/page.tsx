@@ -105,7 +105,7 @@ export default function MainPage() {
                         Unser verschwenderischer Lebensstil
                     </h1>
 
-                    <text style={{fontSize: 40}}>
+                    <text>
                         Drei Erden bräuchten wir, wenn alle so leben würden wie wir in Deutschland, sagt Statista.
                         Wahnsinn, oder? Aber nicht nur das, in den letzten Jahren wurden noch immer 19-22 Millionen Smartphones in Deutschland
                         pro Jahr verkauft. Doch was passiert mit den alten Smartphones? Meistens bleiben sie in irgendwelchen
@@ -126,7 +126,7 @@ export default function MainPage() {
                     <h1 className={styles.headerFont} style={{fontSize: 60}}>
                         Recycling als Lösung
                     </h1>
-                    <p style={{fontSize: 40}}>
+                    <text>
                         Ein Handy enthält zahlreiche Rohstoffe, deren Recycling einen echten Mehrwert
                         für den Energieverbrauch und unsere Umwelt im Allgemeinen liefert. Es ist
                         anzumerken, dass sich das Recycling von manchen Smartphone-Komponenten nicht lohnt,
@@ -137,7 +137,7 @@ export default function MainPage() {
                         Recycling der fünf genannten Metalle zu 85% wiederhergestellt werden. Somit leistet
                         ihr durch das Recycling deines Smartphones einen nicht zu vernachlässigenden Beitrag
                         für unsere Umwelt!
-                    </p>
+                    </text>
                 </div>
             </div>
         )
@@ -243,7 +243,6 @@ export default function MainPage() {
             <BoxVerschwenderischerLebenstil></BoxVerschwenderischerLebenstil>
             <BoxRecyclingAlsLoesung></BoxRecyclingAlsLoesung>
             <BoxFacts></BoxFacts>
-            <BoxInfografik></BoxInfografik>
             <ButtonToFormPage></ButtonToFormPage>
             <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>
             <DragAndDropPart></DragAndDropPart>
