@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 export const metadata = {
     title: 'Recharge The Source',
     description: 'Website about recycling of smartphones',
-    icons: './public/earth.ico',
+    icons: './earth.ico',
 }
 
 export default function RootLayout({
