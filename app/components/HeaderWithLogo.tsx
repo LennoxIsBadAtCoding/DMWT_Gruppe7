@@ -2,7 +2,6 @@
 
 import styles from "../../styles/Layout.module.css";
 import React from "react";
-import { Button, Link } from 'react-scroll'
 import logo from '../../public/recharge-the-source-logo.svg'
 import Image from "next/image";
 

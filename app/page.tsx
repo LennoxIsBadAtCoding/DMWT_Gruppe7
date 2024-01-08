@@ -8,6 +8,9 @@ import HeaderMenu from "./components/HeaderMenu";
 import {Button, Link} from 'react-scroll';
 import ImageChange from './changeImage';
 import truckGIF from "../public/TruckDrivingAway.gif";
+import {DndProvider} from "react-dnd"
+import {HTML5Backend} from "react-dnd-html5-backend";
+import DragDrop from "./components/DragDrop.tsx";
 
 export default function MainPage() {
     function Hero() {
@@ -91,7 +94,7 @@ export default function MainPage() {
                 ></Image>
             </div>
         )
-    }
+    };
 
     function BoxVerschwenderischerLebenstil() {
         return (
@@ -110,17 +113,11 @@ export default function MainPage() {
                         Einzelne einen kleinen aber feinen Beitrag zur Verbesserung der Welt liefern kann. Und was
                         ihr mit euren Handys machen könnt, das zeigen wir euch hier auf dieser Webseite!
                     </text>
-                    <div className={styles.container}>
-                        <div className={styles.threeEarths}>
-                            <img src={'./Erde.svg'} className={styles.earth}/>
-                            <img src={'./Erde.svg'} className={styles.earth}/>
-                            <img src={'./Erde.svg'} className={styles.earth}/>
-                        </div>
-                    </div>
+                    <img src={'./ErdeRessourcenverbrauch.svg'} id={styles.earthRessources}/>
                 </div>
             </div>
         )
-    }
+    };
 
     function BoxRecyclingAlsLoesung() {
         return (
@@ -131,27 +128,27 @@ export default function MainPage() {
                     </h1>
                     <p style={{fontSize: 40}}>
                         Ein Handy enthält zahlreiche Rohstoffe, deren Recycling einen echten Mehrwert
-
+                        <br/>
                         für den Energieverbrauch und unsere Umwelt im Allgemeinen liefert. Es ist
-
+                        <br/>
                         anzumerken, dass sich das Recycling von manchen Smartphone-Komponenten nicht lohnt,
                         da es zu einer noch größeren Umweltbelastung führt. Für viele von ihnen jedoch, wie
                         beispielsweise Gold, Kupfer, Palladium, Silber oder Platin, existieren etablierte
-
+                        <br/>
                         Verfahren zur Rückgewinnung. Dadurch sind sie beliebig häufig verwendbar, werden
-
+                        <br/>
                         also nie wirklich “verbraucht”. Der reine Metallwert eines Smartphones kann durch das
-
+                        <br/>
                         Recycling der fünf genannten Metalle zu 85% wiederhergestellt werden. Somit leistet
-
+                        <br/>
                         ihr durch das Recycling deines Smartphones einen nicht zu vernachlässigenden Beitrag
-
+                        <br/>
                         für unsere Umwelt!
                     </p>
                 </div>
             </div>
         )
-    }
+    };
 
     function BoxFacts() {
         return (
@@ -170,11 +167,11 @@ export default function MainPage() {
                         <div className={styles.infoBox}>nutzt ein Durchschnittsdeutscher sein Handy bis er sich ein neues kauft</div>
                         <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
                     </div>
-                    <img src={'./Handybestandteile.svg'} id={styles.handyRessources}/>
+                    <img src={'./handyMitRohstoffe.svg'} id={styles.handyRessources}/>
                 </div>
             </div>
         )
-    }
+    };
 
     function BoxInfografik() {
         return (
@@ -187,21 +184,20 @@ export default function MainPage() {
                 </div>
             </div>
         )
-    }
+    };
 
 
     function ButtonToFormPage() {
         return (
-            <div className={stylesLayout.buttonToOtherPageBox}>
-                <a href="/formular" style={{textDecoration:"none"}}>
-                    <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToForm}>
+            <div className={styles.buttonToFormPageBox} id="contactButton">
+                <a href="/formular" className={styles.linkButtonSize}>
+                    <button id={styles.buttonToForm}>
                         ZUM KONTAKTFORMULAR
                     </button>
                 </a>
             </div>
         )
-    }
-
+    };
     function HeroButton(){
         return(
             <>
@@ -220,6 +216,13 @@ export default function MainPage() {
                 </div>
             </>
         )
+    };
+    function DragAndDropPart(){
+        return (
+            <DndProvider backend={HTML5Backend}>
+            <DragDrop></DragDrop>
+            </DndProvider>
+        )
     }
 
     return(
@@ -232,7 +235,8 @@ export default function MainPage() {
             <BoxFacts></BoxFacts>
             <BoxInfografik></BoxInfografik>
             <ButtonToFormPage></ButtonToFormPage>
-            <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>;
+            <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>
+            <DragAndDropPart></DragAndDropPart>
         </main>
     )
 }
