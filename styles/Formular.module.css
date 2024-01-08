@@ -1,43 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
 
 .h1{
+    color: black;
     text-align: center;
     font-family: 'Viga';
+    font-size: 3.75em;
 }
 .inputStyle{
-    margin-top: 20px;
-    clear:both;
+    margin-top: 0.5rem;
     overflow: hidden;
-    width: 500px;
-    font-size: 2.5em;
+    padding: 0px 20px;
+    width: 55%;
+    font-size: 2em;
     font-family: 'Gothic A1';
     font-weight: 500;
-    border-radius: 15px;
+    border-radius: 500px;
+    border: none;
+}
+
+.inputStyleComment{
+    margin-top: 0.5rem;
+    width: 55%;
+    height: 8rem;
+    padding: 12px 20px;
+    clear:both;
+    overflow: hidden;
+    font-size: 2em;
+    font-family: 'Gothic A1';
+    font-weight: 500;
+    border: none;
+    border-radius: 2rem;
+    resize: none;
 }
 #submitButton{
-    position: relative;
-    transform: translateX(80rem);
-
+    margin-left: 70%;
+    border: none;
     background-color: #20D7C4;
-    height: 80px;
-    width: 400px;
+    height: 2.5rem;
+    width: 15rem;
     border-radius: 500px;
+    font-family: 'Gothic A1';
+    font-size: 1.75em;
+    font-weight: 500;
 }
+
 #submitButton:hover{
     cursor: pointer;
-    font-size: 2.7em;
+    font-size: 2em;
 }
-.comment{
-    color: #FFFFFF;
+#buttonToMainPageBox{
+    transform: translateY(-28.5rem);
 }
-#commentBox{
-    margin: auto;
-    width: 30%;
-}
-#inputData{
-    color: #FFFFFF;
+#buttonToMainPage{
+    background-color: #52B0F8;
 }
 
+#buttonToMainPage:hover{
+    background-color: #2c61d1;
+}
 .linkStyle{
     font-size: 1.5em;
     text-decoration: underline;
@@ -46,11 +66,12 @@
 
 .App {
     text-align: center;
-    color: #FFFFFF;
+    color: black;
 }
 .errorMessage{
-    color: #FFFFFF;
-    font-family: "Viga";
+    color: black;
+    padding: 0px 20px;
+    font-family: "Gothic A1";
 }
 .centered{
     display: flex;
@@ -58,18 +79,15 @@
     align-items: center;
 }
 #smallBox{
-     height: 745px;
+    height: 37rem;
 }
 
-#largeBox{
-    height: 1590px;
-}
 
 .transparentBox{
-    width: 85%;
+    width: 60%;
     border-radius: 50px;
-    background-color: rgba(16, 18, 30, 0.8);
-    margin-top: 70px;
+    background-color: rgb(225, 221, 229);
+    margin-top: 3%;
     color: white;
     padding-left: 4%;
     padding-top: 1.5%;

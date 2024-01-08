@@ -9,18 +9,18 @@ import * as yup from "yup";
 import HeaderWithLogo from "../components/HeaderWithLogo";
 import toast, {Toaster} from "react-hot-toast";
 
-export default function Form () {
+export default function FormPage () {
 
     const SignupSchema = yup.object().shape({
-        firstName: yup.string().required("Please tell us, how we should address you"),
-        eMail: yup.string().required("Must be a valid E-Mail address")
+        firstName: yup.string().required("Erzähl uns bitte wie wir dich nennen sollen"),
+        eMail: yup.string().required("Es muss eine gültige E-Mail sein =)")
             .email("Es muss eine gültige E-Mail sein =)"),
-        userComment: yup.string().required("Bitte erzähl uns, was du wissen möchtest im Kommentarfeld")
+        userComment: yup.string().required("Bitte erzähl uns im Kommentarfeld, was du wissen möchtest")
             .max(300, "Kommentare können nicht länger als 300 Buchstaben sein")
     });
 
     // form for user input
-    function App() {
+    function Form() {
         const {register,
             handleSubmit,
             formState: {errors}
@@ -53,9 +53,10 @@ export default function Form () {
 
         function correctInputResponse(userInformation){
             const userName = userInformation.firstName;
-            setData("");
+            console.log(userInformation);
+            //setData("");
+
             document.forms['formInput'].reset();
-           // console.log(JSON.stringify(userInformation));
             toast.promise(makeApiRequest(JSON.stringify(userInformation)).then(r => console.log("hm")),{
                 loading: 'Verarbeite deine Nachricht',
                 success: <b>Hey, wir haben deine Nachricht erhalten {userName}</b> ,
@@ -77,36 +78,49 @@ export default function Form () {
                     }
                 }
             } );
+            userInformation.firstName = "";
+            userInformation.eMail = "";
+            userInformation.userComment = "";
         }
 
 
         return (
-            <form id= 'formInput' onSubmit={handleSubmit((data) => correctInputResponse(data))}>
-                <div>
-                    <input id= "inputName" {...register("firstName")} placeholder="Dein Name"
-                           className={stylesForm.inputStyle}/>
-                {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
-                </div>
-                <div>
-                <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail"
-                       className={stylesForm.inputStyle}/>
-                {errors.eMail && <p className={stylesForm.errorMessage}>{errors.eMail.message}</p>}
-                </div>
-                <div>
-                <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns"
-                       className={stylesForm.inputStyle}/>
-                {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
-                </div>
-                <input className={stylesForm.inputStyle} id={stylesForm.submitButton} type="submit" value={"Daten abschicken"}/>
-            </form>
+            <div className={stylesForm.centered}>
+                <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
+                    <h1 className={stylesForm.h1}>
+                        Kontaktformular
+                    </h1>
+                    <div>
+                        <form id= 'formInput' onSubmit={handleSubmit((data) => correctInputResponse(data))}>
+                            <div >
+                                <input id= "inputName" {...register("firstName")} placeholder="Dein Name"
+                                       className={stylesForm.inputStyle}/>
+                            {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
+
+
+                            <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail"
+                                   className={stylesForm.inputStyle}/>
+                            {errors.eMail && <p className={stylesForm.errorMessage} >{errors.eMail.message}</p>}
+
+                            <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns"
+                                   className={stylesForm.inputStyleComment}/>
+                            {errors.userComment && <p className={stylesForm.errorMessage} style={{marginBottom:"-1.5rem"}}>{errors.userComment.message}</p>}
+                            </div>
+
+                            <input id={stylesForm.submitButton} type="submit" value={"Absenden"}/>
+
+                        </form>
+                    </div>
+            </div>
+            </div>
         );
     }
 
     function ButtonToMainPage() {
         return (
-            <div className={stylesLayout.buttonToOtherPageBox}>
-                <a href="/" style={{textDecoration:"none"}}>
-                    <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToMainPage}>
+            <div className={stylesLayout.buttonToOtherPageBox} id={stylesForm.buttonToMainPageBox}>
+                <a href="/" style={{textDecoration:"none"}} >
+                    <button className={stylesLayout.buttonToOtherPage} id={stylesForm.buttonToMainPage}>
                         ZUR STARTSEITE
                     </button>
                 </a>
@@ -118,19 +132,11 @@ export default function Form () {
     return (
         <main>
             <HeaderWithLogo></HeaderWithLogo>
-            <div className={stylesForm.centered}>
-                <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
-                    <h1 className={stylesForm.h1} style={{fontSize: 60}}>
-                        Kontaktformular
-                    </h1>
-                    <App></App>
-                    <Toaster
-                        position="top-center"
-                        reverseOrder={false}
-                        containerStyle={{fontFamily: 'Viga', fontSize: '1.5em'}}
-                    />
-                </div>
-            </div>
+            <Form></Form>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+                containerStyle={{fontFamily: 'Viga', fontSize: '1.5em'}}/>
             <ButtonToMainPage></ButtonToMainPage>
         </main>
     )

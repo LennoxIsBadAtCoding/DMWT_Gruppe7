@@ -117,9 +117,6 @@
     background-color: #20D7C4;
 }
 
-#buttonToMainPage{
-    background-color: #52B0F8;
-}
 
 .buttonToOtherPage:hover{
     cursor: pointer;
@@ -129,10 +126,6 @@
 
 #buttonToForm:hover{
     background-color: #45AA9F;
-}
-
-#buttonToMainPage:hover{
-    background-color: #2c61d1;
 }
 
 .footer{
