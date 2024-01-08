@@ -194,13 +194,16 @@ export default function MainPage() {
 
     function ButtonToFormPage() {
         return (
-            <div className={stylesLayout.buttonToOtherPageBox} id="contactButton">
-                <a href="/formular" style={{textDecoration:"none"}}>
-                    <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToForm}>
-                        ZUM KONTAKTFORMULAR
-                    </button>
-                </a>
-            </div>
+            <>
+                <div id="contactButton"/>
+                <div className={stylesLayout.buttonToOtherPageBox}>
+                    <a href="/formular" style={{textDecoration:"none"}}>
+                        <button className={stylesLayout.buttonToOtherPage} id={stylesLayout.buttonToForm}>
+                            ZUM KONTAKTFORMULAR
+                        </button>
+                    </a>
+                </div>
+            </>
         )
     }
 
