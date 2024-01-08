@@ -150,17 +150,29 @@ export default function MainPage() {
                     <h1 className={stylesLayout.Text} style={{fontSize: 60}}>
                         Facts
                     </h1>
+                   <div style={{
+                       display: "flex",
+                       alignItems: "center",
+                       justifyContent: "center",
+                       width: "100%",
+                    }}
+                   >
                     <div className={styles.container}>
                         <div className={styles.roundSquare}>210 Mio.</div>
-                        <div className={styles.roundSquare}>2.5 Jahre</div>
-                        <div className={styles.roundSquare}>5.3 Mrd.</div>
+                        <div className={styles.infoBox}>Handys liegen in Deutschen Schubladen</div>
                     </div>
                     <div className={styles.container}>
-                        <div className={styles.infoBox}>Handys liegen in Deutschen Schubladen</div>
+                        <div className={styles.roundSquare}>2.5 Jahre</div>
                         <div className={styles.infoBox}>nutzt ein Durchschnittsdeutscher sein Handy bis er sich ein neues kauft</div>
+                    </div>
+                    <div className={styles.container}>
+                        <div className={styles.roundSquare}>5.3 Mrd.</div>
                         <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
                     </div>
-                    <img src={'./Handybestandteile.svg'} id={styles.handyRessources}/>
+                   </div>
+                <img src={'./Handybestandteile.svg'} id={styles.handyRessources}>
+
+                </img>
                 </div>
             </div>
         )
@@ -173,6 +185,7 @@ export default function MainPage() {
                     <p style={{fontSize: 50}}>
                         Wenn du auf das Handy klickst kannst du dir den Recycling Prozess genauer anschauen
                     </p>
+
                     <ImageChange></ImageChange>
                 </div>
             </div>
