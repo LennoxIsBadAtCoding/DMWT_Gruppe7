@@ -216,6 +216,10 @@
 .ovenAndCBoardBox{
     display: flex;
 }
+.circuitBoard{
+    width: 300px;
+    height: 300px;
+}
 .infographicsTextSettings{
     text-align: match-parent;
 }

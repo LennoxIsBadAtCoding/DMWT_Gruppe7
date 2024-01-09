@@ -33,6 +33,7 @@ function Infographics() {
     }));
     const StartOven = () => {
         document.getElementById("oven").setAttribute("src", workingOven.src);
+        document.getElementById("oven").style.marginLeft = "300px";
         LetPhoneDisappear();
         LetOvenDisappear();
     };
@@ -42,13 +43,14 @@ function Infographics() {
         document.getElementById("circuitBoardAndOven").style.display = "contents";
     }
     const LetPhoneDisappear = () => {
-        document.getElementById("draggable").style.display = "none";
+       document.getElementById("draggable").style.display = "none";
     }
     const LetOvenDisappear = () =>{
         setVariableText("Wir warten kurz bis der Ofen fertig ist, oder?")
          setTimeoutID(setTimeout(( () => {
-            document.getElementById("dropPlace").style.display = "none";
-            setVariableText("Jetzt ist der Ofen fertig und wir haben bla bla zurückgewonnen, falls du weitere Fragen haben, dann schreib uns über das Kontaktformular");
+             document.getElementById("dropPlace").style.display = "none";
+             repositionOven();
+             setVariableText("Jetzt ist der Ofen fertig und wir haben bla bla zurückgewonnen, falls du weitere Fragen haben, dann schreib uns über das Kontaktformular");
             document.getElementById("wonResources").style.display = "contents";
          }),3000));
     }
@@ -57,11 +59,15 @@ function Infographics() {
         LetPhoneDisappear();
 
         document.getElementById("truck").setAttribute("src", "");
+        repositionOven();
         document.getElementById("circuitBoardAndOven").style.display = "none";
         document.getElementById("dropPlace").style.display = "none";
         document.getElementById("oven").setAttribute("src", oven.src);
         setTimeout(() => (document.getElementById("truck").setAttribute("src", drivingTruck.src)), 1);
 
+    }
+    const repositionOven = () => {
+        document.getElementById("oven").style.marginLeft = "0px";
     }
     const displayImageRef = useRef(null);
     const handleImageClick = () => {
@@ -112,12 +118,15 @@ function Infographics() {
 
                     <div id = "circuitBoardAndOven" style={{display : "none"}}>
                         <div className={styles.ovenAndCBoardBox}>
-                            <div id = "draggable">
+
+                            <div id = "draggable" >
                                 <Image ref={drag} id="circuitBoard" src={battery} alt={"smartphone"} width={300} height={300}></Image>
                             </div>
+
                             <div id = "dropPlace">
                                 <Image ref={drop} id="oven" src={oven} alt={"oven"} width={300} height={300}></Image>
                             </div>
+
                         </div>
                         <div>
                             <Image id = "truck" src={drivingTruck} alt={"Truck driving away with smartphone parts"} width={900} height={740}></Image>
