@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
 
+/*1298 x 671 Browser Auflösung von MacBook pro 13*/
+
 #Hero {
     object-fit: fill;
     display: block;
@@ -57,6 +59,7 @@
     rx: 7.50945px;
     transition: 0.3s;
 }
+
 .WebsiteTitle{
     color: #FFF;
     font-family: 'Viga', sans-serif;
@@ -156,13 +159,13 @@
     top: 50%;
     margin-top: 10%;
 }
-#handyInfographic{
-    width: 1500px;
-    height: 700px;
+.handyInfographic{
+    /*width: 1500px;*/
+    /*height: 700px;*/
     margin-top: 8%;
     margin-left: 550px;
 }
-#handyInfographic:hover{
+.handyInfographic:hover{
     cursor: pointer;
 }
 #startSquare{
@@ -193,4 +196,26 @@
 
 .headerFont{
     font-family: 'Viga', sans-serif;
+}
+.infographicsBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.infographicsTextBox{
+    width: 35%;
+}
+.infographicsInteractiveContentBox{
+    width: 65%;
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*text-align: center;*/
+    /*min-height: 100vh;*/
+}
+.ovenAndCBoardBox{
+    display: flex;
+}
+.infographicsTextSettings{
+    text-align: match-parent;
 }

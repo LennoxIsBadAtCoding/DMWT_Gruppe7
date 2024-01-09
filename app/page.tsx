@@ -10,7 +10,7 @@ import ImageChange from './changeImage';
 import truckGIF from "../public/TruckDrivingAway.gif";
 import {DndProvider} from "react-dnd"
 import {HTML5Backend} from "react-dnd-html5-backend";
-import DragDrop from "./components/DragDrop.tsx";
+import Infographics from "./components/Infographics.tsx";
 
 export default function MainPage() {
     function Hero() {
@@ -182,11 +182,7 @@ export default function MainPage() {
         return (
             <div className={styles.centered} id="infografik">
                 <div className={styles.transparentBox} id={styles.largeBox}>
-                    <p>
-                        Wenn du auf das Handy klickst kannst du dir den Recycling Prozess genauer anschauen
-                    </p>
-
-                    <ImageChange></ImageChange>
+                    <DragAndDropPart></DragAndDropPart>
                 </div>
             </div>
         )
@@ -230,7 +226,7 @@ export default function MainPage() {
     function DragAndDropPart(){
         return (
             <DndProvider backend={HTML5Backend}>
-            <DragDrop></DragDrop>
+            <Infographics></Infographics>
             </DndProvider>
         )
     }
@@ -245,8 +241,6 @@ export default function MainPage() {
             <BoxFacts></BoxFacts>
             <BoxInfografik></BoxInfografik>
             <ButtonToFormPage></ButtonToFormPage>
-            <Image src={truckGIF} alt={"Truck driving away with smartphone parts"}></Image>
-            <DragAndDropPart></DragAndDropPart>
         </main>
     )
 }
