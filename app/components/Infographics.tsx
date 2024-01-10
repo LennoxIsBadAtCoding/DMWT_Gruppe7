@@ -12,7 +12,6 @@ import {useDrag, useDrop} from "react-dnd";
 import styles from "../../styles/MainPage.module.css";
 
 
-
 function Infographics() {
     const [variableText, setVariableText] = useState("Klicke auf das Handy und schau was passiert");
     const [timeoutID, setTimeoutID] = useState(undefined);
