@@ -56,7 +56,7 @@
     y: 26.2883px;
     width: 15.0189px;
     height: 60.0756px;
-    rx: 7.50945px;
+    handyrx: 7.50945px;
     transition: 0.3s;
 }
 
@@ -152,12 +152,35 @@
 }
 #handyRessources{
     position: absolute;
-    width: 1000px;
-    heigth: 1500px;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    margin-top: 10%;
+    width: 1480px;
+    height: 1300px;
+    display: flex;
+    alignItems: center;
+    justifyContent: center;
+}
+#container2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid red;
+    width: 1500px;
+    height: 800px;
+    margin-bottom: 25px;
+}
+.singleRessources{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 800px;
+
+}
+.singleRessources:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
 }
 .handyInfographic{
     /*width: 1500px;*/

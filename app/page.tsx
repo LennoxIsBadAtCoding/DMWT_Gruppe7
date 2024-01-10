@@ -170,9 +170,17 @@ export default function MainPage() {
                         <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
                     </div>
                    </div>
-                <img src={'./Handybestandteile.svg'} id={styles.handyRessources}>
+                        <div style={{display: "flex", alignItems: "center", justifyContent: "center",
+                            width: "100%", height:"900px"}}>
+                            <img src={'./HandyGrundriss.svg'} id={styles.handyRessources} style={{zIndex:1, position:"relative"}}/>
 
-                </img>
+                            <div style={{marginTop:"40px",flexDirection: "column",width: "900px", height: "750px", zIndex:2, marginLeft:"300px", position:"absolute"}}>
+                                    <img src={'./AndereStoffe.svg'} className={styles.singleRessources} style={{width:"905px", marginLeft:"33px"}}/>
+                                    <img src={'./Kunststoffe.svg'} className={styles.singleRessources} style={{width:"1025px", marginLeft:"32px"}}/>
+                                    <img src={'./Glas.svg'} className={styles.singleRessources} style={{width:"855px", marginLeft:"33px"}}/>
+                                    <img src={'./Metalle.svg'} className={styles.singleRessources} style={{width:"960px", marginLeft:"32px"}}/>
+                            </div>
+                        </div>
                 </div>
             </div>
         )
