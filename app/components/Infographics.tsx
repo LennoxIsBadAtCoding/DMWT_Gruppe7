@@ -4,7 +4,7 @@ import oven from "../../public/Ofen.svg";
 import workingOven from "../../public/WorkingOven.gif";
 import battery from "../../public/Platine.svg";
 import brokenPhone from "../../public/HandyMitZerbrochenemGlas.svg";
-import insideOfPhoneWithAll from "../../public/HandyMitAkku.svg";
+import insideOfPhoneWithAll from "../../public/HandymitAkku.svg";
 import insideOfPhoneOnlyCircuitBoard from "../../public/HandyMitPlatine.svg";
 import drivingTruck from "../../public/TruckDrivingAway.gif";
 import earth from "../../public/Erde.svg";
