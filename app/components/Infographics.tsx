@@ -107,7 +107,7 @@ function Infographics() {
                 <div className={styles.infographicsInteractiveContentBox}>
                     <div>
                             <div id="clickableInfographics">
-                                <Image ref={displayImageRef} src= {brokenPhone} id= "clickPhone"
+                                <Image ref={displayImageRef} src= {brokenPhone.src} id= "clickPhone"
                                        alt="Kaputtes Handy" onClick={handleImageClick} className={styles.handyInfographic}
                                        width={500} height={500}>
                                 </Image>
