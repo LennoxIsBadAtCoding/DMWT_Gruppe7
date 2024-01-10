@@ -10,10 +10,11 @@ import drivingTruck from "../../public/TruckDrivingAway.gif";
 import earth from "../../public/Erde.svg";
 import {useDrag, useDrop} from "react-dnd";
 import styles from "../../styles/MainPage.module.css";
+import {string} from "yup";
 
 
 function Infographics() {
-    const [variableText, setVariableText] = useState("Klicke auf das Handy und schau was passiert");
+    const [variableText, setVariableText] = useState("Klicke auf das Handy um den Recycling Prozess zu starten.");
     const [timeoutID, setTimeoutID] = useState(undefined);
 
     const [{ isDragging }, drag] = useDrag(() => ({
@@ -45,11 +46,12 @@ function Infographics() {
        document.getElementById("draggable").style.display = "none";
     }
     const LetOvenDisappear = () =>{
-        setVariableText("Wir warten kurz bis der Ofen fertig ist, oder?")
+        setVariableText("Nun müssen wir warten, bis der Ofen fertig ist.")
          setTimeoutID(setTimeout(( () => {
              document.getElementById("dropPlace").style.display = "none";
              repositionOven();
-             setVariableText("Jetzt ist der Ofen fertig und wir haben bla bla zurückgewonnen, falls du weitere Fragen haben, dann schreib uns über das Kontaktformular");
+             setVariableText("Jetzt ist der Ofen fertig und wir haben die Metalle, Edelmetalle und Seltenen Erden aus der Leiterplatte zurückgewonnen.\n" +
+                 "Falls du weitere Fragen haben solltest, schreibe uns über das Kontaktformular");
             document.getElementById("wonResources").style.display = "contents";
          }),3000));
     }
@@ -73,20 +75,20 @@ function Infographics() {
 
         if (displayImageRef.current && displayImageRef.current.src.match(brokenPhone.src)) {
             displayImageRef.current.src = insideOfPhoneWithAll.src;
-             setVariableText("Nachdem wir das Touchscreen recycelt haben  stoßen wir auf den Akku der ebenfalls recycelt werden kann.\n" +
-                 "...\n" +
-                 "Doch das recyceln der Leiterplatte wollen wir uns im nächsten Schritt genauer anschauen aufgrund der hohen Metallwerte die sie aufweist");
+             setVariableText("Sowohl das Display als auch der Akku können recycelt werden. Aus dem Display kann das Metall Idium gewonnen werden, das als Leiter für die Touchscreen-Funktion verwendet wird. Aus dem Akku können Metalle wie Lithium und Kobalt, aber auch Seltene Erden zurückgewonnen werden.\n" +
+                  +
+                 "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an.");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneWithAll.src)){
             displayImageRef.current.src = insideOfPhoneOnlyCircuitBoard.src;
-            setVariableText("Die Leiterplatte enthält  90% des Goldes, 98% des Kupfers, 99% des Paladiums, 86% des Indiums und 93% des Tantals das im Handy insgesamt verbaut wurde. Aufgrund der vielen verschiedenen verbauten Metalle  ist sie sehr interessant für den Recyclingprozess ");
+            setVariableText("Die Leiterplatte enthält 90% des Goldes, 98% des Kupfers, 99% des Palladiums, 86% des Indiums und 93% des Tantals, die insgesamt im Handy verbaut sind. Aufgrund der vielen verschiedenen verbauten Metalle ist sie  für den Recyclingprozess sehr interessant.");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneOnlyCircuitBoard.src)){
             document.getElementById("clickableInfographics").style.display = "none";
-            setVariableText("Jetzt müssen wir die Platine einschmelzen, dafür musst du sie in den Ofen legen!")
+            setVariableText("Um die Leiterplatte zu recyceln, muss sie eingeschmolzen werden. Dafür musst du sie in den Ofen legen!\n")
             LetOvenAndPhoneAppear();
         }
     };
     const handleButtonClick = () => {
-        setVariableText("Klicke auf das Handy und schau was passiert");
+        setVariableText("Klicke auf das Handy um den Recycling Prozess zu starten.");
         if(document.getElementById("clickableInfographics").style.display == "none") {
             document.getElementById("wonResources").style.display = "none";
             document.getElementById("clickableInfographics").style.display = "contents";
