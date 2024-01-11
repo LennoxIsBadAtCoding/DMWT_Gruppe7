@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Viga&display=swap');
 
-/*1298 x 671 Browser Auflösung von MacBook pro 13*/
 
-#Hero {
-    object-fit: fill;
-    display: block;
-    margin: 0 auto;
-    position: relative;
+#mainPageBox{
+    display: flex;
+    flex-direction: column;
 }
+.mainPageBoxDistance{
+    margin-bottom: 30px;
+}
+#heroBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
 #HeroBackground{
     transform: translateY(-100px);
     width:100%;
@@ -21,13 +28,10 @@
     stroke: transparent;
     stroke-width: 0px;
 }
-#flyingSmartphones{
-    position: relative;
+#flyingSmartphoneBox{
+    position: absolute;
     width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    margin-top: -75rem;
+    height:100%;
 }
 
 .HeroButton{
@@ -112,6 +116,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    width: 28%;
     margin-left: 70px;
     margin-right: 70px;
     margin-top: 30px;
@@ -121,17 +126,34 @@
     height: 250px;
     margin-left: 90px;
 }
-.threeEarths{
-    margin-left: 900px;
+#backgroundBoxLifestyle{
+    height: 700px;
+}
+.textImageBoxLifestyle{
+    display: flex;
+    margin-top: 60px;
+}
+.textBoxLifestyle{
+    width: 60%;
+}
+.imageBoxLifestyle{
+    width: 40%;
+}
+#usedUpEarths{
+    margin-left: 200px;
+}
+#usedUpEarths:hover .earthRedStripe{
+    width: 8px;
+    transition: 0.6s;
 }
 .roundSquare{
-    width: 350px;
-    height: 100px;
+    width: 300px;
+    height: 70px;
     background-color: cornflowerblue;
     border-radius: 60px;
     font-family: 'Viga', sans-serif;
     color: white;
-    font-size: 55px;
+    font-size: 1.25em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,7 +163,7 @@
 .infoBox{
     color:white;
     font-family: 'Gothic A1', sans-serif;
-    font-size: 35px;
+    font-size: 1.1em ;
     width: 500px;
     opacity: 100%;
     display: flex;
@@ -183,8 +205,6 @@
     transition: 0.3s;
 }
 .handyInfographic{
-    /*width: 1500px;*/
-    /*height: 700px;*/
     margin-top: 8%;
     margin-left: 550px;
 }
@@ -197,7 +217,7 @@
     background-color: #6145d2;
     border-radius: 60px;
     font-family: 'Gothic A1', sans-serif;
-    font-size: 35px;
+    font-size: 1.875em;
     color: white;
     display: flex;
     align-items: center;
@@ -231,10 +251,6 @@
 .infographicsInteractiveContentBox{
     width: 65%;
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*text-align: center;*/
-    /*min-height: 100vh;*/
 }
 .ovenAndCBoardBox{
     display: flex;
