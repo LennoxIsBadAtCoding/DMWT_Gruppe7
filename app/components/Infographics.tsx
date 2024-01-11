@@ -14,7 +14,7 @@ import {string} from "yup";
 
 
 function Infographics() {
-    const [variableText, setVariableText] = useState("Klicke auf das Handy um den Recycling Prozess zu starten.");
+    const [variableText, setVariableText] = useState("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy um zu starten.");
     const [timeoutID, setTimeoutID] = useState(undefined);
 
     const [{ isDragging }, drag] = useDrag(() => ({
@@ -46,16 +46,16 @@ function Infographics() {
        document.getElementById("draggable").style.display = "none";
     }
     const LetOvenDisappear = () =>{
-        setVariableText("Nun müssen wir warten, bis der Ofen fertig ist.")
+        setVariableText("So, wir sind fast am Ende!")
          setTimeoutID(setTimeout(( () => {
              document.getElementById("dropPlace").style.display = "none";
              repositionOven();
-             setVariableText("Der Ofen ist fertig! Rechts siehst du die Metalle, die Du erzeugt hast." +
-                 "Dank dir konnten wir rund 85% des Metallwerts vom Smartphone wiedergewinnen." +
-                 " Kupfer, Silber, Palladium, Gold und Platin sind hierbei die Metalle, die du mit " +
-                 "einfachem Standardrecycling durch eine Schmelze hergstellt hast. Nach der Schmelze wird " +
+             setVariableText("BING! Der Ofen ist fertig! Rechts siehst du die Metalle, die Du erzeugt hast." +
+                 " Kupfer, Silber, Palladium, Gold und Platin sind hierbei die Metalle, die du mit einem " +
+                 "einfachen Standardrecycling durch eine Schmelze hergstellt hast. Nach der Schmelze wird " +
                  "üblicherweise noch eine Elektrolyse durchgeführt, um die einzelnen Metalle von einander " +
-                 "zu trennen. Falls du weitere Fragen haben solltest, schreibe uns gerne über das Kontaktformular " +
+                 "zu trennen. Dank dir konnten wir bis zu 98% dieser Metalle zurückgewinnen." +
+                 " Falls du weitere Fragen haben solltest, schreibe uns gerne über das Kontaktformular " +
                  "weiter unten!");
             document.getElementById("wonResources").style.display = "contents";
          }),3000));
@@ -63,7 +63,6 @@ function Infographics() {
     const LetPhoneAndOvenDisappear = () =>{
         clearTimeout(timeoutID);
         LetPhoneDisappear();
-
         document.getElementById("truck").setAttribute("src", "");
         repositionOven();
         document.getElementById("circuitBoardAndOven").style.display = "none";
@@ -80,22 +79,29 @@ function Infographics() {
 
         if (displayImageRef.current && displayImageRef.current.src.match(brokenPhone.src)) {
             displayImageRef.current.src = insideOfPhoneWithAll.src;
-             setVariableText("Sowohl das Display als auch der Akku können recycelt werden. Aus dem Display kann das Metall Idium gewonnen werden," +
-                 " das als Leiter für die Touchscreen-Funktion verwendet wird. Aus dem Akku können Metalle wie Lithium und Kobalt, aber auch Seltene Erden zurückgewonnen werden.\n" +
-                  + "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an.");
+             setVariableText("So jetzt haben wir erstmal das Display gelöst und schauen uns das Innere vom Smartphone an. " +
+                 "Das gelöste Display, der Akku und die darunterliegende Leiterplatte können recyclet werden. " +
+                 "Aus dem Display kann das Metall Idium gewonnen werden." +
+                 " Aus dem Akku können Metalle wie Lithium und Kobalt und auch Seltene Erden zurückgewonnen werden." +
+                 "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an. " +
+                 "Klicke dafür auf das Handy!");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneWithAll.src)){
             displayImageRef.current.src = insideOfPhoneOnlyCircuitBoard.src;
             setVariableText("Die Leiterplatte enthält 90% des Goldes, 98% des Kupfers," +
-                " 99% des Palladiums, 86% des Indiums und 93% des Tantals, die insgesamt im Handy verbaut sind. " +
-                "Aufgrund der vielen verschiedenen verbauten Metalle ist sie für den Recyclingprozess sehr interessant.");
+                " 99% des Palladiums, 86% des Indiums und 93% des Tantals, die insgesamt in einem Handy verbaut sind. " +
+                "Aufgrund der vielen verschiedenen verbauten Metalle und ihrem hohen Metallwert" +
+                " ist sie für den Recyclingprozess sehr attraktiv." +
+                " Um die Leiterplatte zu recyclen, musst du sie aus dem Handy nehmen." +
+                " Um sie rauszunehmen, klicke auf das Handy ");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneOnlyCircuitBoard.src)){
             document.getElementById("clickableInfographics").style.display = "none";
-            setVariableText("Um die Leiterplatte zu recyceln, muss sie eingeschmolzen werden. Dafür musst du sie in den Ofen legen!\n")
+            setVariableText("Jetzt aber genug Infos! Lass uns die Leiterplatte recyceln!" +
+                " Dafür musst du die Platte in den Ofen legen, damit wir ihre Metalle einschmelzen können!\n")
             LetOvenAndPhoneAppear();
         }
     };
     const handleButtonClick = () => {
-        setVariableText("Klicke auf das Handy um den Recycling Prozess zu starten.");
+        setVariableText("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy um zu starten.");
         if(document.getElementById("clickableInfographics").style.display == "none") {
             document.getElementById("wonResources").style.display = "none";
             document.getElementById("clickableInfographics").style.display = "contents";
@@ -129,7 +135,7 @@ function Infographics() {
                     <div id = "circuitBoardAndOven" style={{display : "none"}}>
                         <div className={styles.ovenAndCBoardBox}>
 
-                            <div id = "draggable" >
+                            <div id = "draggable"  className={styles.circuitBoard}>
                                 <Image ref={drag} id="circuitBoard" src={battery} alt={"smartphone"} width={300} height={300}></Image>
                             </div>
 
@@ -138,7 +144,7 @@ function Infographics() {
                             </div>
 
                         </div>
-                        <div>
+                        <div id ="truckBox">
                             <Image id = "truck" src={drivingTruck} alt={"Truck driving away with smartphone parts"} width={900} height={740}></Image>
                         </div>
                     </div>

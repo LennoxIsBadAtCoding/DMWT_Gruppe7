@@ -256,9 +256,8 @@
 .ovenAndCBoardBox{
     display: flex;
 }
-.circuitBoard{
-    width: 300px;
-    height: 300px;
+.circuitBoard:hover{
+    cursor: pointer;
 }
 .infographicsTextSettings{
     text-align: match-parent;
