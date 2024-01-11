@@ -7,7 +7,7 @@ import brokenPhone from "../../public/HandyMitZerbrochenemGlas.svg";
 import insideOfPhoneWithAll from "../../public/HandymitAkku.svg";
 import insideOfPhoneOnlyCircuitBoard from "../../public/HandyMitPlatine.svg";
 import drivingTruck from "../../public/TruckDrivingAway.gif";
-import earth from "../../public/Erde.svg";
+import metalsAsResult from "../../public/MetalsAsCoins.svg";
 import {useDrag, useDrop} from "react-dnd";
 import styles from "../../styles/MainPage.module.css";
 import {string} from "yup";
@@ -50,8 +50,13 @@ function Infographics() {
          setTimeoutID(setTimeout(( () => {
              document.getElementById("dropPlace").style.display = "none";
              repositionOven();
-             setVariableText("Jetzt ist der Ofen fertig und wir haben die Metalle, Edelmetalle und Seltenen Erden aus der Leiterplatte zurückgewonnen.\n" +
-                 "Falls du weitere Fragen haben solltest, schreibe uns über das Kontaktformular");
+             setVariableText("Der Ofen ist fertig! Rechts siehst du die Metalle, die Du erzeugt hast." +
+                 "Dank dir konnten wir rund 85% des Metallwerts vom Smartphone wiedergewinnen." +
+                 " Kupfer, Silber, Palladium, Gold und Platin sind hierbei die Metalle, die du mit " +
+                 "einfachem Standardrecycling durch eine Schmelze hergstellt hast. Nach der Schmelze wird " +
+                 "üblicherweise noch eine Elektrolyse durchgeführt, um die einzelnen Metalle von einander " +
+                 "zu trennen. Falls du weitere Fragen haben solltest, schreibe uns gerne über das Kontaktformular " +
+                 "weiter unten!");
             document.getElementById("wonResources").style.display = "contents";
          }),3000));
     }
@@ -75,12 +80,14 @@ function Infographics() {
 
         if (displayImageRef.current && displayImageRef.current.src.match(brokenPhone.src)) {
             displayImageRef.current.src = insideOfPhoneWithAll.src;
-             setVariableText("Sowohl das Display als auch der Akku können recycelt werden. Aus dem Display kann das Metall Idium gewonnen werden, das als Leiter für die Touchscreen-Funktion verwendet wird. Aus dem Akku können Metalle wie Lithium und Kobalt, aber auch Seltene Erden zurückgewonnen werden.\n" +
-                  +
-                 "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an.");
+             setVariableText("Sowohl das Display als auch der Akku können recycelt werden. Aus dem Display kann das Metall Idium gewonnen werden," +
+                 " das als Leiter für die Touchscreen-Funktion verwendet wird. Aus dem Akku können Metalle wie Lithium und Kobalt, aber auch Seltene Erden zurückgewonnen werden.\n" +
+                  + "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an.");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneWithAll.src)){
             displayImageRef.current.src = insideOfPhoneOnlyCircuitBoard.src;
-            setVariableText("Die Leiterplatte enthält 90% des Goldes, 98% des Kupfers, 99% des Palladiums, 86% des Indiums und 93% des Tantals, die insgesamt im Handy verbaut sind. Aufgrund der vielen verschiedenen verbauten Metalle ist sie  für den Recyclingprozess sehr interessant.");
+            setVariableText("Die Leiterplatte enthält 90% des Goldes, 98% des Kupfers," +
+                " 99% des Palladiums, 86% des Indiums und 93% des Tantals, die insgesamt im Handy verbaut sind. " +
+                "Aufgrund der vielen verschiedenen verbauten Metalle ist sie für den Recyclingprozess sehr interessant.");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneOnlyCircuitBoard.src)){
             document.getElementById("clickableInfographics").style.display = "none";
             setVariableText("Um die Leiterplatte zu recyceln, muss sie eingeschmolzen werden. Dafür musst du sie in den Ofen legen!\n")
@@ -101,7 +108,9 @@ function Infographics() {
         <>
             <div className={styles.infographicsBox}>
                 <div className={styles.infographicsTextBox}>
-                    <button onClick={handleButtonClick} id={styles.startSquare}>Starte von vorne</button>
+                    <button onClick={handleButtonClick} id={styles.startSquare}>
+                        Starte von vorne
+                    </button>
                     <p className={styles.infographicsTextSettings}>
                         {variableText}
                     </p>
@@ -135,7 +144,7 @@ function Infographics() {
                     </div>
                 </div>
                 <div id = "wonResources" style={{display : "none"}}>
-                    <Image src={earth} alt={"picture of won resources through the recycling of one circuit board"} width={300} height={300}></Image>
+                    <Image src={metalsAsResult} className={styles.wonResourcesBox} alt={"picture of won resources through the recycling of one circuit board"}></Image>
                 </div>
             </div>
         </>

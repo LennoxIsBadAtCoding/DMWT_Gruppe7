@@ -217,17 +217,18 @@
     background-color: #6145d2;
     border-radius: 60px;
     font-family: 'Gothic A1', sans-serif;
-    font-size: 1.875em;
+    font-size: 1.1em;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 50px;
+    border: none;
 }
 #startSquare:hover{
     cursor: pointer;
     background-color: #593ec5;
-    font-size: 37px;
+    font-size: 1.2em;
     transition: 0.5s;
 }
 
@@ -261,4 +262,9 @@
 }
 .infographicsTextSettings{
     text-align: match-parent;
+}
+.wonResourcesBox:hover{
+    height: 163px;
+    width: 375px;
+    transition: 0.3s;
 }
