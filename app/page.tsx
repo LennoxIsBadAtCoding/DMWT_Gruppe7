@@ -126,21 +126,20 @@ export default function MainPage() {
 
     function BoxVerschwenderischerLebenstil() {
         return (
-            <div className={styles.centered} style={{position:"relative"}}
-                 id="ourLifestyle">
+            <div className={styles.centered} style={{position:"relative"}} id="ourLifestyle">
                 <div className={styles.transparentBox} id={styles.backgroundBoxLifestyle}>
-                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont}>
                         Unser verschwenderischer Lebensstil
                     </h1>
                     <div className={styles.textImageBoxLifestyle}>
                         <div className={styles.textBoxLifestyle}>
-                            <text>
-                                Drei Erden bräuchten wir, wenn alle so leben würden wie wir in Deutschland, das berichtet Statista.
-                                Wahnsinn, oder? Aber nicht nur das, in den letzten Jahren wurden noch immer 19-22 Millionen Smartphones in Deutschland
-                                pro Jahr verkauft. Doch was passiert mit den alten Smartphones? Meistens bleiben sie in irgendwelchen
+                            <text className={styles.textFont}>
+                                <text className={styles.bolderColoredText}>Drei Erden</text> bräuchten wir, wenn alle so leben würden wie wir in Deutschland, das berichtet Statista.
+                                Wahnsinn, oder? Aber nicht nur das, in den letzten Jahren wurden noch immer <text className={styles.bolderColoredText}>19-22 Millionen</text> Smartphones in Deutschland
+                                <text className={styles.bolderColoredText}> pro Jahr</text> verkauft. Doch was passiert mit den alten Smartphones? Meistens bleiben sie in irgendwelchen
                                 Schubladen liegen. Genau deshalb sollten wir uns einmal Gedanken machen, ob und wie jeder
                                 Einzelne einen kleinen aber feinen Beitrag zur Verbesserung der Welt liefern kann. Und was
-                                du mit deinen Handys machen kannst, das erfährst du auf dieser Website.
+                                du mit deinen Handys machen kannst, <text className={styles.bolderColoredText}>das erfährst du auf dieser Website!</text>
                             </text>
                         </div>
                         <div className={styles.ImageBoxLifestyle}>
@@ -178,18 +177,19 @@ export default function MainPage() {
         return (
             <div className={styles.centered} id="recycling">
                 <div className={styles.transparentBox} id={styles.smallBox}>
-                    <h1 className={styles.headerFont} style={{fontSize: 60}}>
+                    <h1 className={styles.headerFont}>
                         Recycling als Lösung
                     </h1>
-                    <text>
-                        Ein Handy enthält zahlreiche Rohstoffe, deren Recycling einen echten Mehrwert
-                        für den Energieverbrauch und unsere Umwelt im Allgemeinen liefert. Es ist
+                    <text className={styles.textFont}>
+                        Ein Handy enthält <text className={styles.bolderColoredText}>zahlreiche Rohstoffe</text>, deren Recycling einen echten Mehrwert
+                        für den <text className={styles.bolderColoredText}>Energieverbrauch</text> und unsere <text className={styles.bolderColoredText}>Umwelt</text> im Allgemeinen liefert. Es ist
                         anzumerken, dass sich das Recycling von manchen Smartphone-Komponenten nicht lohnt,
                         da es zu einer noch größeren Umweltbelastung führt. Für viele von ihnen jedoch, wie
-                        beispielsweise Gold, Kupfer, Palladium, Silber oder Platin, existieren etablierte
-                        Verfahren zur Rückgewinnung. Dadurch sind sie beliebig häufig verwendbar, werden
+                        beispielsweise <text className={styles.bolderColoredText}>Gold</text>, <text className={styles.bolderColoredText}>Kupfer</text>,
+                        <text className={styles.bolderColoredText}>Palladium</text>, <text className={styles.bolderColoredText}>Silber</text> oder <text className={styles.bolderColoredText}>Platin</text>,
+                        existieren etablierte Verfahren zur <text className={styles.bolderColoredText}>Rückgewinnung</text>. Dadurch sind sie beliebig häufig verwendbar, werden
                         also nie wirklich “verbraucht”. Der reine Metallwert eines Smartphones kann durch das
-                        Recycling der fünf genannten Metalle zu 85% wiederhergestellt werden. Somit leistet
+                        Recycling der fünf genannten Metalle zu <text className={styles.bolderColoredText}>85%</text> wiederhergestellt werden. Somit leistet
                         ihr durch das Recycling deines Smartphones einen nicht zu vernachlässigenden Beitrag
                         für unsere Umwelt!
                     </text>
