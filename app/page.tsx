@@ -10,6 +10,7 @@ import {Button, Link} from 'react-scroll';
 import {DndProvider} from "react-dnd"
 import {HTML5Backend} from "react-dnd-html5-backend";
 import Infographics from "./components/Infographics.tsx";
+import classNames from "classnames";
 
 export default function MainPage() {
     function Hero() {
@@ -127,7 +128,7 @@ export default function MainPage() {
     function BoxVerschwenderischerLebenstil() {
         return (
             <div className={styles.centered} style={{position:"relative"}} id="ourLifestyle">
-                <div className={styles.transparentBox} id={styles.backgroundBoxLifestyle}>
+                <div className={styles.transparentBox}>
                     <h1 className={styles.headerFont}>
                         Unser verschwenderischer Lebensstil
                     </h1>
@@ -143,7 +144,7 @@ export default function MainPage() {
                             </text>
                         </div>
                         <div className={styles.ImageBoxLifestyle}>
-                            <svg id={styles.usedUpEarths} width="200" height="450" viewBox="0 0 86 275" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                            <svg id={styles.usedUpEarths} width="200" height="400" viewBox="0 0 86 275" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                 <path d="M43.3697 84.7393C66.7698 84.7393 85.7393 65.7698 85.7393 42.3697C85.7393 18.9695 66.7698 0 43.3697 0C19.9695 0 1 18.9695 1 42.3697C1 65.7698 19.9695 84.7393 43.3697 84.7393Z" fill="#52B0F8"/>
                                 <path d="M79.2801 26.5765C79.6967 25.8114 79.5272 24.6853 78.9063 24.0755L63.9019 9.34667C63.281 8.73687 62.2071 8.67192 61.5181 9.2057L51.5126 16.932C50.8236 17.4642 49.7671 18.4162 49.1668 19.0466C49.1668 19.0466 45.8327 22.5486 43.924 26.9281C41.2583 33.0452 41.6939 39.6295 41.6939 39.6295C41.7509 40.4991 42.4399 41.5223 43.2224 41.9024C43.2224 41.9024 49.3426 44.8818 54.6946 46.2503C60.8466 47.8247 68.6172 47.9735 68.6172 47.9735C69.4884 47.991 70.3675 47.3115 70.5702 46.4641L71.8516 41.1089C72.0543 40.2615 72.5612 38.9421 72.9762 38.177L79.2817 26.5765H79.2801Z" fill="#20D7C4"/>
                                 <path d="M1.16632 40.1791C2.29407 47.1721 5.1451 51.6546 7.81083 51.6356C8.36995 51.6324 9.46126 51.4265 10.8203 49.7349C12.8144 47.2529 14.3128 45.2856 14.4633 44.9831C17.9368 38.025 38.4484 27.5126 37.43 19.9573C37.137 17.781 34.9464 15.0361 26.6594 12.5129C23.8289 11.0826 20.9985 9.65236 18.1696 8.22367C8.39688 15.5762 1.86166 27.077 1.16632 40.1791Z" fill="#20D7C4"/>
@@ -201,41 +202,37 @@ export default function MainPage() {
     function BoxFacts() {
         return (
             <div className={styles.centered} id="facts">
-                <div className={styles.transparentBox} id={styles.largeBox}>
-                    <h1 className={stylesLayout.Text} style={{fontSize: 60}}>
+                <div className={styles.transparentBox}>
+                    <h1 className={styles.headerFont}>
                         Facts
                     </h1>
-                   <div style={{
-                       display: "flex",
-                       alignItems: "center",
-                       justifyContent: "center",
-                       width: "100%",
-                    }}
-                   >
-                    <div className={styles.container}>
-                        <div className={styles.roundSquare}>210 Mio.</div>
-                        <div className={styles.infoBox}>Handys liegen in Deutschen Schubladen</div>
-                    </div>
-                    <div className={styles.container}>
-                        <div className={styles.roundSquare}>2.5 Jahre</div>
-                        <div className={styles.infoBox}>nutzt ein Durchschnittsdeutscher sein Handy bis er sich ein neues kauft</div>
-                    </div>
-                    <div className={styles.container}>
-                        <div className={styles.roundSquare}>5.3 Mrd.</div>
-                        <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
-                    </div>
-                   </div>
-                        <div style={{display: "flex", alignItems: "center", justifyContent: "center",
-                            width: "100%", height:"900px"}}>
-                            <img src={'./HandyGrundriss.svg'} id={styles.handyRessources} style={{zIndex:1, position:"relative"}}/>
-
-                            <div style={{marginTop:"40px",flexDirection: "column",width: "900px", height: "750px", zIndex:2, marginLeft:"300px", position:"absolute"}}>
-                                    <img src={'./AndereStoffe.svg'} className={styles.singleRessources} style={{width:"905px", marginLeft:"33px"}}/>
-                                    <img src={'./Kunststoffe.svg'} className={styles.singleRessources} style={{width:"1025px", marginLeft:"32px"}}/>
-                                    <img src={'./Glas.svg'} className={styles.singleRessources} style={{width:"855px", marginLeft:"33px"}}/>
-                                    <img src={'./Metalle.svg'} className={styles.singleRessources} style={{width:"960px", marginLeft:"32px"}}/>
-                            </div>
+                    <div id={styles.factsTop}>
+                        <div className={styles.container}>
+                            <div className={styles.roundSquare}>210 Mio.</div>
+                            <div className={styles.infoBox}>Handys liegen in deutschen Schubladen</div>
                         </div>
+                        <div className={styles.container}>
+                            <div className={styles.roundSquare}>2.5 Jahre</div>
+                            <div className={styles.infoBox}>nutzt ein Durchschnittsdeutscher sein Handy, bis er sich ein neues kauft</div>
+                        </div>
+                        <div className={styles.container}>
+                            <div className={styles.roundSquare}>5.3 Mrd.</div>
+                            <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
+                        </div>
+                    </div>
+                    <div className={styles.mobileAndResourcesContainer}>
+                        <div id={styles.mobileContainer}>
+                            <img src={'./HandyGrundriss.svg'} width={900} height={900} id={styles.mobile}/>
+                        </div>
+                        <div id={styles.resourcesContainer}>
+                            <img src={'./AndereStoffe.svg'} className={styles.singleRessources} style={{width:"547px", marginLeft:"33px"}}/>
+                            <img src={'./Kunststoffe.svg'} className={styles.singleRessources} style={{width:"619px", marginLeft:"33px"}}/>
+                            <img src={'./Glas.svg'} className={styles.singleRessources} style={{width:"517px", marginLeft:"33px"}}/>
+                            <img src={'./Metalle.svg'} className={styles.singleRessources} style={{width:"580px", marginLeft:"33px", marginTop:"-6px"}}/>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         )

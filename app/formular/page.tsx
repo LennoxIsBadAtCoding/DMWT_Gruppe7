@@ -9,10 +9,11 @@ import * as yup from "yup";
 import HeaderWithLogo from "../components/HeaderWithLogo";
 import toast, {Toaster} from "react-hot-toast";
 
+
 export default function FormPage () {
 
     const SignupSchema = yup.object().shape({
-        firstName: yup.string().required("Erzähl uns bitte wie wir dich nennen sollen"),
+        firstName: yup.string().required("Erzähl uns bitte, wie wir dich nennen sollen"),
         eMail: yup.string().required("Es muss eine gültige E-Mail sein =)")
             .email("Es muss eine gültige E-Mail sein =)"),
         userComment: yup.string().required("Bitte erzähl uns im Kommentarfeld, was du wissen möchtest")
@@ -86,17 +87,16 @@ export default function FormPage () {
 
         return (
             <div className={stylesForm.centered}>
-                <div className={stylesForm.transparentBox} id={stylesForm.smallBox}>
+                <div className={stylesForm.greyBox} id={stylesForm.smallBox}>
                     <h1 className={stylesForm.h1}>
                         Kontaktformular
                     </h1>
                     <div>
                         <form id= 'formInput' onSubmit={handleSubmit((data) => correctInputResponse(data))}>
-                            <div style={{display: "flex"}}>
-                                <div style={{width:"70%"}}>
+                            <div id={stylesForm.inputAndButtonContainer}>
+                                <div id={stylesForm.inputContainer}>
                                     <input id= "inputName" {...register("firstName")} placeholder="Dein Name"  className={stylesForm.inputStyle}/>
                                         {errors.firstName && <p className={stylesForm.errorMessage}>{errors.firstName.message}</p>}
-
 
                                     <input id= "inputEmail" {...register("eMail")} placeholder="Deine E-mail" className={stylesForm.inputStyle}/>
                                         {errors.eMail && <p className={stylesForm.errorMessage}>{errors.eMail.message}</p>}
@@ -104,7 +104,7 @@ export default function FormPage () {
                                     <textarea id= "inputComment" {...register("userComment")} placeholder="Dein Comment an uns" className={stylesForm.inputStyleComment}/>
                                         {errors.userComment && <p className={stylesForm.errorMessage}>{errors.userComment.message}</p>}
                                 </div>
-                                <div style={{width:"30%"}}>
+                                <div id={stylesForm.buttonContainer}>
                                     <input id={stylesForm.submitButton} type="submit" value={"Absenden"}/>
                                 </div>
                             </div>

@@ -26,7 +26,10 @@
     position: fixed;
     z-index: 999;
     display: flex;
-    min-height: 80px;
+    width: 100%;
+    /*height: max-content;*/
+    /*min-height: 80px;*/
+    max-height: 80px;
 }
 
 #left{
@@ -96,19 +99,19 @@
 .buttonToOtherPageBox{
     position: relative;
     margin: auto;
-    height: 150px;
-    width: 475px;
+    height: 110px;
+    width: 340px;
     transform: translateY(-15rem);
 }
 
 .buttonToOtherPage{
     display: block;
-    border-radius: 50px;
+    border-radius: 40px;
     margin: 500px auto;
     font-family: 'Viga', sans-serif;
-    font-size: 30px;
-    height: 150px;
-    width: 475px;
+    font-size: 1.5em;
+    height: 110px;
+    width: 340px;
     border: none;
     font-weight: bold;
 }
@@ -117,10 +120,9 @@
     background-color: #20D7C4;
 }
 
-
 .buttonToOtherPage:hover{
     cursor: pointer;
-    font-size: 32px;
+    font-size: 1.6em;
     transition: 0.5s;
 }
 
@@ -136,6 +138,7 @@
     background-color: #101118;
     color: white;
     display: flex;
+    flex-flow: row;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -144,4 +147,6 @@
 
 .footerContent{
     margin: 100px;
+    transform: translate(-25%);
 }
+
