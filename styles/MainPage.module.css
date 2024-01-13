@@ -261,9 +261,17 @@
     transition: 0.3s;
 }
 
+.phoneImageContainer{
+    border: purple 10px solid;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 .handyInfographic{
     margin-top: 8%;
-    margin-left: 550px;
+
+    border: cyan 10px solid;
 }
 .handyInfographic:hover{
     cursor: pointer;
@@ -299,22 +307,39 @@
     width: 100%;
     height: 100%;
     display: flex;
+    border: red 1px solid;
 }
 .infographicsTextBox{
     width: 35%;
+    height: 950px;
+    margin-top: 50px;
+    border: green 1px solid;
 }
 .infographicsInteractiveContentBox{
     width: 65%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border: blue 7px solid;
 }
 .ovenAndCBoardBox{
     display: flex;
 }
+
+#circuitBoard{
+    border:darkred 20px solid;
+    height: 1000px;
+}
+
 .circuitBoard:hover{
     cursor: pointer;
 }
 .infographicsTextSettings{
     text-align: match-parent;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 0.8em;
+    line-height: 1.8em;
+    margin-top: 50px;
 }
 .wonResourcesBox:hover{
     height: 163px;

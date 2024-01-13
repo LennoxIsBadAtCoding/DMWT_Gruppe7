@@ -14,7 +14,7 @@ import {string} from "yup";
 
 
 function Infographics() {
-    const [variableText, setVariableText] = useState("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy um zu starten.");
+    const [variableText, setVariableText] = useState("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy, um zu starten.");
     const [timeoutID, setTimeoutID] = useState(undefined);
 
     const [{ isDragging }, drag] = useDrag(() => ({
@@ -50,10 +50,10 @@ function Infographics() {
          setTimeoutID(setTimeout(( () => {
              document.getElementById("dropPlace").style.display = "none";
              repositionOven();
-             setVariableText("BING! Der Ofen ist fertig! Rechts siehst du die Metalle, die Du erzeugt hast." +
+             setVariableText("BING! Der Ofen ist fertig! Rechts siehst du die Metalle, die du erzeugt hast." +
                  " Kupfer, Silber, Palladium, Gold und Platin sind hierbei die Metalle, die du mit einem " +
                  "einfachen Standardrecycling durch eine Schmelze hergstellt hast. Nach der Schmelze wird " +
-                 "üblicherweise noch eine Elektrolyse durchgeführt, um die einzelnen Metalle von einander " +
+                 "üblicherweise noch eine Elektrolyse durchgeführt, um die einzelnen Metalle voneinander " +
                  "zu trennen. Dank dir konnten wir bis zu 98% dieser Metalle zurückgewinnen." +
                  " Falls du weitere Fragen haben solltest, schreibe uns gerne über das Kontaktformular " +
                  "weiter unten!");
@@ -79,10 +79,10 @@ function Infographics() {
 
         if (displayImageRef.current && displayImageRef.current.src.match(brokenPhone.src)) {
             displayImageRef.current.src = insideOfPhoneWithAll.src;
-             setVariableText("So jetzt haben wir erstmal das Display gelöst und schauen uns das Innere vom Smartphone an. " +
+             setVariableText("So, jetzt haben wir erstmal das Display gelöst und schauen uns das Innere vom Smartphone an. " +
                  "Das gelöste Display, der Akku und die darunterliegende Leiterplatte können recyclet werden. " +
                  "Aus dem Display kann das Metall Idium gewonnen werden." +
-                 " Aus dem Akku können Metalle wie Lithium und Kobalt und auch Seltene Erden zurückgewonnen werden." +
+                 " Aus dem Akku können Metalle wie Lithium und Kobalt und auch seltene Erden zurückgewonnen werden." +
                  "Im nächsten Schritt schauen wir uns jedoch das Recycling der Leiterplatte aufgrund der hohen Metallwerte genauer an. " +
                  "Klicke dafür auf das Handy!");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneWithAll.src)){
@@ -92,7 +92,7 @@ function Infographics() {
                 "Aufgrund der vielen verschiedenen verbauten Metalle und ihrem hohen Metallwert" +
                 " ist sie für den Recyclingprozess sehr attraktiv." +
                 " Um die Leiterplatte zu recyclen, musst du sie aus dem Handy nehmen." +
-                " Um sie rauszunehmen, klicke auf das Handy ");
+                " Um sie rauszunehmen, klicke auf das Handy.");
         }else if(displayImageRef.current && displayImageRef.current.src.match(insideOfPhoneOnlyCircuitBoard.src)){
             document.getElementById("clickableInfographics").style.display = "none";
             setVariableText("Jetzt aber genug Infos! Lass uns die Leiterplatte recyceln!" +
@@ -101,7 +101,7 @@ function Infographics() {
         }
     };
     const handleButtonClick = () => {
-        setVariableText("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy um zu starten.");
+        setVariableText("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy, um zu starten.");
         if(document.getElementById("clickableInfographics").style.display == "none") {
             document.getElementById("wonResources").style.display = "none";
             document.getElementById("clickableInfographics").style.display = "contents";
@@ -122,16 +122,14 @@ function Infographics() {
                     </p>
                 </div>
                 <div className={styles.infographicsInteractiveContentBox}>
-                    <div>
-                            <div id="clickableInfographics">
+                    <div style={{border:"yellow 1px solid"}}>
+                            <div id="clickableInfographics" className={styles.phoneImageContainer}>
                                 <Image ref={displayImageRef} src= {brokenPhone.src} id= "clickPhone"
                                        alt="Kaputtes Handy" onClick={handleImageClick} className={styles.handyInfographic}
                                        width={500} height={500}>
                                 </Image>
                             </div>
                     </div>
-
-
                     <div id = "circuitBoardAndOven" style={{display : "none"}}>
                         <div className={styles.ovenAndCBoardBox}>
 
