@@ -122,7 +122,7 @@ function Infographics() {
                     </p>
                 </div>
                 <div className={styles.infographicsInteractiveContentBox}>
-                    <div style={{border:"yellow 1px solid"}}>
+                    <div>
                             <div id="clickableInfographics" className={styles.phoneImageContainer}>
                                 <Image ref={displayImageRef} src= {brokenPhone.src} id= "clickPhone"
                                        alt="Kaputtes Handy" onClick={handleImageClick} className={styles.handyInfographic}
@@ -142,14 +142,19 @@ function Infographics() {
                             </div>
 
                         </div>
+                        <div className={styles.truckBox}>
                         <div id ="truckBox">
                             <Image id = "truck" src={drivingTruck} alt={"Truck driving away with smartphone parts"} width={900} height={740}></Image>
                         </div>
+                        </div>
+                    </div>
+                    <div className={styles.wonResources}>
+                        <div id = "wonResources" style={{display : "none"}} >
+                            <Image src={metalsAsResult} className={styles.wonResourcesBox} alt={"picture of won resources through the recycling of one circuit board"}></Image>
+                        </div>
                     </div>
                 </div>
-                <div id = "wonResources" style={{display : "none"}}>
-                    <Image src={metalsAsResult} className={styles.wonResourcesBox} alt={"picture of won resources through the recycling of one circuit board"}></Image>
-                </div>
+
             </div>
         </>
     )
