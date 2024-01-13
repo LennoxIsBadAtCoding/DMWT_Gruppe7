@@ -10,7 +10,6 @@ import {Button, Link} from 'react-scroll';
 import {DndProvider} from "react-dnd"
 import {HTML5Backend} from "react-dnd-html5-backend";
 import Infographics from "./components/Infographics.tsx";
-import classNames from "classnames";
 
 export default function MainPage() {
     function Hero() {
