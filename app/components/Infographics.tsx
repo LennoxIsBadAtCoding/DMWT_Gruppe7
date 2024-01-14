@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import Image from "next/image";
 import oven from "../../public/Oven.svg";
+import workingOven from "../../public/WorkingOven.gif";
 import battery from "../../public/CircuitBoard.svg";
 import brokenPhone from "../../public/SmartphoneWithBrokenDisplay.svg";
 import insideOfPhoneWithAll from "../../public/SmartphoneWithBattery.svg";
