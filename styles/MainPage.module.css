@@ -270,30 +270,31 @@
 
 .handyInfographic{
     margin-top: 8%;
-
-    /*border: cyan 10px solid;*/
 }
+
 .handyInfographic:hover{
     cursor: pointer;
 }
-#startSquare{
-    width: 300px;
-    height: 80px;
+
+.startSquare{
+    opacity: 0;
+    width: 250px;
+    height: 70px;
     background-color: #6145d2;
     border-radius: 60px;
-    font-family: 'Gothic A1', sans-serif;
-    font-size: 1.1em;
+    font-family: 'Viga', sans-serif;
+    font-size: 0.9em;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
     border: none;
 }
-#startSquare:hover{
+
+.startSquare:hover{
     cursor: pointer;
     background-color: #593ec5;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: 0.5s;
 }
 
@@ -307,54 +308,59 @@
     width: 100%;
     height: 100%;
     display: flex;
-    /*border: red 1px solid;*/
 }
+
 .infographicsTextBox{
-    width: 35%;
-    height: 950px;
+    width: 50%;
+    height: 680px;
     margin-top: 50px;
-    /*border: green 1px solid;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
 .infographicsInteractiveContentBox{
-    width: 75%;
-    /*border: blue 7px solid;*/
-    position: absolute;
-    top: 150px;
-    left: 450px;
+    width: 50%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.ovenAndCBoardBox{
-    display: flex;
-    position: absolute;
-    top: 50px;
-    left: 300px;
+    flex-direction: column;
 }
 
-#circuitBoard{
-    /*border:darkred 20px solid;*/
-    height: 1000px;
+.ovenAndCBoardBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    max-width: 400px;
 }
 
 .circuitBoard:hover{
     cursor: pointer;
 }
+
+.truckBox{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .infographicsTextSettings{
     text-align: match-parent;
     font-family: 'Gothic A1', sans-serif;
-    font-size: 0.8em;
+    font-size: 0.7em;
     line-height: 1.8em;
-    margin-top: 50px;
+    margin-top: 70px;
 }
+
 .wonResources{
     position: absolute;
-    top: 230px;
-    left: 470px;
 }
+
 .wonResourcesBox:hover{
     height: 163px;
     width: 375px;
     transition: 0.3s;
 }
-

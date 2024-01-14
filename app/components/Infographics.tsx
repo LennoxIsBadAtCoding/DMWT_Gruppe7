@@ -32,7 +32,7 @@ function Infographics() {
     }));
     const StartOven = () => {
         document.getElementById("oven").setAttribute("src", workingOven.src);
-        document.getElementById("oven").style.marginLeft = "300px";
+        document.getElementById("oven").style.marginLeft = "5px";
         LetPhoneDisappear();
         LetOvenDisappear();
     };
@@ -56,7 +56,7 @@ function Infographics() {
                  "zu trennen. Dank dir konnten wir bis zu 98% dieser Metalle zurückgewinnen." +
                  " Falls du weitere Fragen haben solltest, schreibe uns gerne über das Kontaktformular " +
                  "weiter unten!");
-            document.getElementById("wonResources").style.display = "contents";
+             document.getElementById("wonResources").style.display = "contents";
          }),3000));
     }
     const LetPhoneAndOvenDisappear = () =>{
@@ -78,6 +78,7 @@ function Infographics() {
 
         if (displayImageRef.current && displayImageRef.current.src.match(brokenPhone.src)) {
             displayImageRef.current.src = insideOfPhoneWithAll.src;
+            document.getElementById("startSquare").style.opacity = "1";
              setVariableText("So, jetzt haben wir erstmal das Display gelöst und schauen uns das Innere vom Smartphone an. " +
                  "Das gelöste Display, der Akku und die darunterliegende Leiterplatte können recyclet werden. " +
                  "Aus dem Display kann das Metall Idium gewonnen werden." +
@@ -100,6 +101,7 @@ function Infographics() {
         }
     };
     const handleButtonClick = () => {
+        document.getElementById("startSquare").style.opacity = "0";
         setVariableText("Hey! Lass uns ein Smartphone recyclen! Klicke auf das Handy, um zu starten.");
         if(document.getElementById("clickableInfographics").style.display == "none") {
             document.getElementById("wonResources").style.display = "none";
@@ -113,7 +115,7 @@ function Infographics() {
         <>
             <div className={styles.infographicsBox}>
                 <div className={styles.infographicsTextBox}>
-                    <button onClick={handleButtonClick} id={styles.startSquare}>
+                    <button onClick={handleButtonClick} className={styles.startSquare} id="startSquare">
                         Starte von vorne
                     </button>
                     <p className={styles.infographicsTextSettings}>
@@ -125,7 +127,7 @@ function Infographics() {
                             <div id="clickableInfographics" className={styles.phoneImageContainer}>
                                 <Image ref={displayImageRef} src= {brokenPhone.src} id= "clickPhone"
                                        alt="Kaputtes Handy" onClick={handleImageClick} className={styles.handyInfographic}
-                                       width={500} height={500}>
+                                       width={340} height={340}>
                                 </Image>
                             </div>
                     </div>
@@ -133,18 +135,18 @@ function Infographics() {
                         <div className={styles.ovenAndCBoardBox}>
 
                             <div id = "draggable"  className={styles.circuitBoard}>
-                                <Image ref={drag} id="circuitBoard" src={battery} alt={"smartphone"} width={300} height={300}></Image>
+                                <Image ref={drag} id="circuitBoard" src={battery} alt={"smartphone"} width={150} height={150}></Image>
                             </div>
 
-                            <div id = "dropPlace">
+                            <div id = "dropPlace" className={styles.oven}>
                                 <Image ref={drop} id="oven" src={oven} alt={"oven"} width={300} height={300}></Image>
                             </div>
 
                         </div>
                         <div className={styles.truckBox}>
-                        <div id ="truckBox">
-                            <Image id = "truck" src={drivingTruck} alt={"Truck driving away with smartphone parts"} width={900} height={740}></Image>
-                        </div>
+                            <div id ="truckBox">
+                                <Image id = "truck" src={drivingTruck} alt={"Truck driving away with smartphone parts"} width={480} height={400}></Image>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.wonResources}>
