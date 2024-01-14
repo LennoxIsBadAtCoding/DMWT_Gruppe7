@@ -9,7 +9,6 @@ import * as yup from "yup";
 import HeaderWithLogo from "../components/HeaderWithLogo";
 import toast, {Toaster} from "react-hot-toast";
 
-
 export default function FormPage () {
 
     // defines the accepted format for each input field of the form (name, email and the comment)
@@ -86,7 +85,7 @@ export default function FormPage () {
 
         return (
             <div className={stylesForm.centered}>
-                <div className={stylesForm.greyBox} id={stylesForm.smallBox}>
+                <div className={stylesForm.greyBox}>
                     <h1 className={stylesForm.h1}>
                         Kontaktformular
                     </h1>

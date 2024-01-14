@@ -12,6 +12,8 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import Infographics from "./components/Infographics.tsx";
 
 export default function MainPage() {
+
+    // contains whole hero image (svg), button that leads to first info box is inclusive
     function Hero() {
         return (
             <div id={styles.heroBox}>
@@ -124,6 +126,7 @@ export default function MainPage() {
         )
     }
 
+    // contains all content of info box "Unser verschwenderischer Lebensstil"
     function BoxVerschwenderischerLebenstil() {
         return (
             <div className={styles.centered} style={{position:"relative"}} id="ourLifestyle">
@@ -142,6 +145,7 @@ export default function MainPage() {
                                 du mit deinen Handys machen kannst, <text className={styles.bolderColoredText}>das erfährst du auf dieser Website!</text>
                             </text>
                         </div>
+                        {/* image with three dead earths */}
                         <div className={styles.ImageBoxLifestyle}>
                             <svg id={styles.usedUpEarths} width="200" height="400" viewBox="0 0 86 275" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                 <path d="M43.3697 84.7393C66.7698 84.7393 85.7393 65.7698 85.7393 42.3697C85.7393 18.9695 66.7698 0 43.3697 0C19.9695 0 1 18.9695 1 42.3697C1 65.7698 19.9695 84.7393 43.3697 84.7393Z" fill="#52B0F8"/>
@@ -173,10 +177,11 @@ export default function MainPage() {
         )
     }
 
+    // contains all content of info box "Recycling als Lösung"
     function BoxRecyclingAlsLoesung() {
         return (
             <div className={styles.centered} id="recycling">
-                <div className={styles.transparentBox} id={styles.smallBox}>
+                <div className={styles.transparentBox}>
                     <h1 className={styles.headerFont}>
                         Recycling als Lösung
                     </h1>
@@ -198,6 +203,7 @@ export default function MainPage() {
         )
     }
 
+    // contains all content of info box "Facts"
     function BoxFacts() {
         return (
             <div className={styles.centered} id="facts">
@@ -205,6 +211,7 @@ export default function MainPage() {
                     <h1 className={styles.headerFont}>
                         Facts
                     </h1>
+                    {/* contains three facts on top */}
                     <div id={styles.factsTop}>
                         <div className={styles.container}>
                             <div className={styles.roundSquare}>210 Mio.</div>
@@ -219,6 +226,7 @@ export default function MainPage() {
                             <div className={styles.infoBox}>Handys werden weltweit im Jahr weggeworfen</div>
                         </div>
                     </div>
+                    {/* contains phone with resource hover effect */}
                     <div className={styles.mobileAndResourcesContainer}>
                         <div id={styles.mobileContainer}>
                             <img src={'./SmartphoneLayout.svg'} width={900} height={900} id={styles.mobile}/>
@@ -237,16 +245,18 @@ export default function MainPage() {
         )
     }
 
+    // contains infographics with text, button and drag and drop properties
     function BoxInfografik() {
         return (
             <div className={styles.centered} id="infografik">
-                <div className={styles.transparentBox} id={styles.largeBox}>
+                <div className={styles.transparentBox}>
                     <DragAndDropPart></DragAndDropPart>
                 </div>
             </div>
         )
     }
 
+    // button that leads to other page with form
     function ButtonToFormPage() {
         return (
             <>
@@ -262,8 +272,7 @@ export default function MainPage() {
         )
     }
 
-
-
+    // drag and drop happens in infographics
     function DragAndDropPart(){
         return (
             <DndProvider backend={HTML5Backend}>

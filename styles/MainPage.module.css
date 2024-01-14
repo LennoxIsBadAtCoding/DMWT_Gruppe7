@@ -20,9 +20,11 @@
     display: flex;
     flex-direction: column;
 }
+
 .mainPageBoxDistance{
     margin-bottom: 30px;
 }
+
 #heroBox{
     display: flex;
     flex-direction: column;
@@ -43,6 +45,7 @@
     stroke: transparent;
     stroke-width: 0px;
 }
+
 #flyingSmartphoneBox{
     position: absolute;
     width: 100%;
@@ -53,15 +56,18 @@
     background: transparent;
     border-color: transparent;
 }
+
 .HeroButton:hover{
     cursor: pointer;
 }
+
 .HeroButton:hover #ButtonForm{
     fill: black;
     color: black;
     transition: 0.3s;
     fill-opacity: 100%;
 }
+
 .HeroButton:hover #ArrowLeft{
     x: 27.6558px;
     y: 37.7935px;
@@ -70,6 +76,7 @@
     rx: 7.50945px;
     transition: 0.3s;
 }
+
 .HeroButton:hover #ArrowRight{
     x: 109.346px;
     y: 26.2883px;
@@ -102,16 +109,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#smallBox{
-    /*height: 745px;*/
-    height: max-content;
-}
-
-#largeBox{
-    /*height: 1590px;*/
-    height: max-content;
 }
 
 .transparentBox{
@@ -204,18 +201,6 @@
     width: 8px;
     transition: 0.2s;
 }
-
-/*#container2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    border: 1px solid red;
-    width: 1500px;
-    height: 800px;
-    margin-bottom: 25px;
-}*/
 
 .mobileAndResourcesContainer{
     display: flex;
