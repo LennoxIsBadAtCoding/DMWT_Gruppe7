@@ -221,13 +221,13 @@ export default function MainPage() {
                     </div>
                     <div className={styles.mobileAndResourcesContainer}>
                         <div id={styles.mobileContainer}>
-                            <img src={'./HandyGrundriss.svg'} width={900} height={900} id={styles.mobile}/>
+                            <img src={'./SmartphoneLayout.svg'} width={900} height={900} id={styles.mobile}/>
                         </div>
                         <div id={styles.resourcesContainer}>
-                            <img src={'./AndereStoffe.svg'} className={styles.singleRessources} style={{width:"547px", marginLeft:"33px"}}/>
-                            <img src={'./Kunststoffe.svg'} className={styles.singleRessources} style={{width:"619px", marginLeft:"33px"}}/>
-                            <img src={'./Glas.svg'} className={styles.singleRessources} style={{width:"517px", marginLeft:"33px"}}/>
-                            <img src={'./Metalle.svg'} className={styles.singleRessources} style={{width:"580px", marginLeft:"33px", marginTop:"-6px"}}/>
+                            <img src={'./DifferentMaterials.svg'} className={styles.singleRessources} style={{width:"547px", marginLeft:"33px"}}/>
+                            <img src={'./Plastics.svg'} className={styles.singleRessources} style={{width:"619px", marginLeft:"33px"}}/>
+                            <img src={'./Glass.svg'} className={styles.singleRessources} style={{width:"517px", marginLeft:"33px"}}/>
+                            <img src={'./Metalls.svg'} className={styles.singleRessources} style={{width:"580px", marginLeft:"33px", marginTop:"-6px"}}/>
                         </div>
                     </div>
 
