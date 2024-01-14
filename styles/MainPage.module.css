@@ -204,6 +204,7 @@
 
 .mobileAndResourcesContainer{
     display: flex;
+    margin-top: -65px;
     align-items: center;
     justify-content: center;
     width: 100%;
