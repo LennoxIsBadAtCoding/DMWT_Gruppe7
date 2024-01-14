@@ -10,7 +10,6 @@ import drivingTruck from "../../public/TruckDrivingAway.gif";
 import metalsAsResult from "../../public/MetalsAsCoins.svg";
 import {useDrag, useDrop} from "react-dnd";
 import styles from "../../styles/MainPage.module.css";
-import {string} from "yup";
 
 
 function Infographics() {
